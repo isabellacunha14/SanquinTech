@@ -31,31 +31,29 @@ O **SanquimTech** é uma aplicação leve, responsiva e de fácil uso, projetada
 - ✅ Recuperação de senha
 - ✅ Calendário escolar interativo
 
-## 🛠️ Tecnologias (sugestão)
+## 🛠️ Tecnologias Previstas
 
-> *(Preencher conforme as tecnologias forem definidas e utilizadas)*
+O projeto será desenvolvido com tecnologias modernas e acessíveis, buscando facilidade de manutenção e compatibilidade com diversos dispositivos. As principais ferramentas e linguagens previstas são:
 
-- Front-end: HTML, CSS, JavaScript (ou framework como React, Vue...)
-- Back-end: Node.js, Django, Laravel...
-- Banco de Dados: PostgreSQL, MySQL, MongoDB...
-- Outros: Docker, Git, etc.
+- **Front-end:** HTML, CSS, JavaScript  
+- **Frameworks:** Bootstrap ou TailwindCSS, com possível uso de React  
+- **Back-end:** Node.js com Express (ou alternativa como Django)  
+- **Banco de Dados:** PostgreSQL ou MySQL  
+- **Outros:** Git, Trello (gestão ágil), Figma (protótipos)
 
-## 📂 Estrutura do Repositório
+> *As tecnologias poderão ser ajustadas conforme a evolução do projeto e as necessidades da equipe.*
 
-```
-sanquimtech/
-├── frontend/         # Interface do usuário (web/mobile)
-├── backend/          # Lógica de negócio e APIs
-├── database/         # Scripts de banco de dados e modelos
-├── docs/             # Documentação adicional (ERS, diagramas, protótipos)
-└── README.md         # Este arquivo
-```
+## 📁 Estrutura do Repositório (provisória)
+
+- `documentacao/` — arquivos de especificação e requisitos
+- `site/` — arquivos da aplicação web (frontend + backend)
+- `README.md` — este arquivo
 
 ## 📌 Kanban e Tarefas
 
 O acompanhamento do progresso do projeto está sendo feito via Trello:
 
-🔗 **[\[Inserir aqui o link do Trello\]](https://trello.com/b/s5sZLwvK/sanquimtech-ads-noite)**
+🔗 **[\[Trello\]](https://trello.com/b/s5sZLwvK/sanquimtech-ads-noite)**
 
 ---
 
@@ -72,4 +70,4 @@ Curso: Análise e Desenvolvimento de Sistemas
 
 ## 📄 Licença
 
-Este projeto é de uso educacional e comunitário, sendo distribuído sem fins lucrativos. Licença a definir conforme evolução do projeto.
+Este projeto é de uso educacional. Licença a definir conforme evolução do projeto.
