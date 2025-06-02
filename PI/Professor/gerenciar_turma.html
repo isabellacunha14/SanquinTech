@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Turma - Portal do Professor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Aluno/dashboard.css">
+    <link rel="stylesheet" href="portal_professor.css">
+    <link rel="stylesheet" href="gerenciar_turma.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="background-container">
+        <header class="navbar">
+            <div class="logo">
+                <img src="../Imagens/logosanquim.png" alt="Sanquim Tech Logo">
+            </div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="portal_professor.html" class="nav-item" data-page="inicio-professor">Início</a></li>
+                    <li><a href="minhas_turmas.html" class="nav-item active" data-page="turmas-professor">Minhas Turmas</a></li>
+                    <li><a href="avisos_turmas.html" class="nav-item" data-page="avisos-professor">Avisos</a></li>
+                    <li><a href="contato.html" class="nav-item" data-page="contato-professor">Contato</a></li>
+                    <li><a href="login.html" class="nav-item" data-page="sair">Sair</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="content-area">
+            <div class="manage-turma-container">
+                <h1 id="turmaTitle">Carregando Turma...</h1>
+                <p id="turmaDiscipline"></p>
+
+                <div class="tabs-container">
+                    <div class="tabs-nav">
+                        <button class="tab-button active" data-tab="frequencia">Frequência</button>
+                        <button class="tab-button" data-tab="notas">Notas</button>
+                        <button class="tab-button" data-tab="registro-aulas">Registro de Aulas/Ocorrências</button>
+                        <button class="tab-button" data-tab="planejamento-aulas">Planejamento de Aulas</button>
+                    </div>
+
+                    <div class="tabs-content">
+                        <div id="frequencia" class="tab-pane active">
+                            <h3>Controle de Frequência</h3>
+                            <form id="frequenciaForm">
+                                <div class="form-group">
+                                    <label for="frequenciaDate">Data:</label>
+                                    <input type="date" id="frequenciaDate" name="frequenciaDate" required>
+                                </div>
+                                <div id="frequenciaStudents" class="students-list">
+                                    </div>
+                                <button type="submit" class="btn-save">Salvar Frequência</button>
+                            </form>
+                            <div class="recent-frequencias">
+                                <h4>Frequências Recentes:</h4>
+                                <ul id="frequenciaHistory">
+                                    </ul>
+                            </div>
+                        </div>
+
+                        <div id="notas" class="tab-pane">
+                            <h3>Lançamento de Notas</h3>
+                            <form id="notasForm">
+                                <div class="form-group">
+                                    <label for="notaType">Tipo de Avaliação:</label>
+                                    <input type="text" id="notaType" name="notaType" placeholder="Ex: P1, Trabalho, P2" required>
+                                </div>
+                                <div id="notasStudents" class="students-list">
+                                    </div>
+                                <button type="submit" class="btn-save">Salvar Notas</button>
+                            </form>
+                             <div class="recent-notas">
+                                <h4>Últimas Notas Lançadas:</h4>
+                                <ul id="notasHistory">
+                                    </ul>
+                            </div>
+                        </div>
+
+                        <div id="registro-aulas" class="tab-pane">
+                            <h3>Registro de Aulas e Ocorrências</h3>
+                            <form id="registroAulasForm">
+                                <div class="form-group">
+                                    <label for="registroDate">Data da Aula/Ocorrência:</label>
+                                    <input type="date" id="registroDate" name="registroDate" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="registroContent">Conteúdo da Aula / Ocorrência:</label>
+                                    <textarea id="registroContent" name="registroContent" rows="10" placeholder="Descreva o conteúdo da aula, atividades realizadas ou detalhes da ocorrência."></textarea>
+                                </div>
+                                <button type="submit" class="btn-save">Salvar Registro</button>
+                            </form>
+                            <div class="recent-registros">
+                                <h4>Registros Recentes:</h4>
+                                <ul id="registroHistory">
+                                    </ul>
+                            </div>
+                        </div>
+
+                        <div id="planejamento-aulas" class="tab-pane">
+                            <h3>Planejamento de Aulas e Materiais</h3>
+                            <form id="planejamentoAulasForm">
+                                <div class="form-group">
+                                    <label for="planejamentoDate">Data da Aula Planejada:</label>
+                                    <input type="date" id="planejamentoDate" name="planejamentoDate" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="planejamentoContent">Planejamento Detalhado:</label>
+                                    <textarea id="planejamentoContent" name="planejamentoContent" rows="10" placeholder="Descreva os objetivos, metodologia e atividades da aula."></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="materialUpload">Anexar Material (Simulado):</label>
+                                    <input type="file" id="materialUpload" name="materialUpload">
+                                    <p class="file-info">Apenas simulação de upload. Nenhum arquivo será salvo.</p>
+                                </div>
+                                <button type="submit" class="btn-save">Salvar Planejamento</button>
+                            </form>
+                            <div class="recent-planejamentos">
+                                <h4>Planejamentos Recentes:</h4>
+                                <ul id="planejamentoHistory">
+                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="contact-info">
+                <p>Praça Duque de Caxias, 169 - Centro - Mogi Mirim</p>
+            </div>
+            <div class="social-media">
+                <p>Nos siga nas redes sociais.</p>
+                <a href="https://web.facebook.com/sanquim/?_rdc=1&_rdr#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/colegiosanquim/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UCc1HL8KqpsJat7hDp90mnag" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="dashboard.js"></script>
+    <script src="gerenciar_turma.js"></script> </body>
+</html>

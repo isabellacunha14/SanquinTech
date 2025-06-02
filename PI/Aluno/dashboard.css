@@ -1,0 +1,961 @@
+body {
+    margin: 0;
+    font-family: "Quicksand", sans-serif;
+    min-height: 100vh;
+    background-color: #f0f0f0; /* Cor de fallback */
+    display: flex;
+    flex-direction: column;
+}
+
+.background-container {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('../Imagens/background.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: transparent; /* Fundo da navbar */
+    position: relative; /* Para o destaque do item ativo */
+    z-index: 10;
+}
+
+.navbar .logo {
+    margin-right: 80px;
+}
+
+.navbar .logo img {
+    max-width: 250px; /* tamanho do logotipo */
+    height: auto;
+}
+
+.nav-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 80px;
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.4em;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: whitesmoke;
+}
+
+/* Destaque do item ativo na navbar */
+.nav-item.active {
+    color: #000000; /* Cor do texto quando ativo */
+}
+
+.nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -6px; /* posição para o destaque */
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% + 45px); /*largura do destaque */
+    height: 35px; /* Altura do destaque */
+    background-color: rgba(255, 255, 255, 0.6); /* Cor do destaque */
+    border-radius: 10px;
+    z-index: -1; /* Para ficar atrás do texto */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Main Content Area */
+.content-area {
+    flex-grow: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Espaço entre os elementos principais */
+}
+
+.welcome-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-card.centered-card {
+    align-self: center; /* Centraliza horizontalmente */
+    margin-left: auto;   /* Remove a margem esquerda fixa */
+    margin-right: auto;  /* Remove a margem direita fixa */
+    text-align: center; /* Centraliza o texto interno */
+    max-width: 1130px;
+    width: 90%;
+}
+
+.welcome-card h1 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+.welcome-card p {
+    color: #555;
+    font-size: 1em;
+}
+
+/* Estilos do Carrossel */
+.carousel-container {
+    position: relative;
+    width: 100%; /*largura do carrossel conforme o welcome-card */
+    max-width: 1200px; /* Mesma largura máxima do welcome-card */
+    height: 400px; /* Altura fixa do carrossel */
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 30px; /* Espaço entre o welcome card e o carrossel */
+    margin-bottom: 30px; /* Espaço entre o carrossel e o grid abaixo */
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo para quando não há imagem cobrindo */
+}
+
+.carousel-slides {
+    display:flex; /* Para os slides ficarem lado a lado */
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out; /* Animação de transição */
+}
+
+.carousel-slide {
+    width: 100%; /* Cada slide ocupa 100% da largura do contêiner */
+    height: 100%;
+    flex-shrink: 0; /* Impede que os slides encolham */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Cor de fallback para slides */
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit:fill; /* Garante que a imagem cubra o slide sem distorcer */
+    border-radius: 15px; /* Para bordas arredondadas da imagem */
+}
+
+.carousel-slide .slide-content {
+    padding: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.5em;
+    z-index: 1; /* Garante que os botões fiquem acima dos slides */
+    border-radius: 5px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-button:hover {
+    opacity: 1;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px; /* Espaço entre os indicadores */
+    z-index: 1;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.indicator.active-indicator {
+    background-color: #ffcc66; /* Cor do indicador ativo */
+    width: 12px; /* Destaque leve */
+    height: 12px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr; /* Quadro de avisos e Calendário */
+    gap: 30px;
+    width: calc(100% - 160px); /* Ajusta a largura total subtraindo as margens do welcome card */
+    max-width: 1200px; /* Limite máximo para o grid */
+    margin-top: 20px; /* Espaço entre o welcome card e o grid */
+}
+
+/* Quadro de Avisos */
+.notice-board-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Garante que o conteúdo role dentro */
+    max-width: 480px;
+}
+
+.notice-board-header {
+    display: flex;
+    font-size: small;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.notice-board-header .fa-bell {
+    font-size: 2em;
+    margin-right: 15px;
+    color: #ffcc66; /* Cor do sino */
+}
+
+.notice-board-header h3 {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.notice-board-content {
+    flex-grow: 1;
+    overflow-y: auto; /* Barra de rolagem vertical */
+    max-height: 400px; /* Altura máxima para ativar a rolagem */
+    padding-right: 10px; /* Espaço para a barra de rolagem não sobrepor o texto */
+}
+
+.notice-item {
+    background-color: #f8f8f8;
+    border-left: 5px solid #ffcc66; /* Linha amarela lateral */
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    position: relative;
+    width:auto;
+    box-sizing: border-box;
+}
+
+.notice-item h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.notice-item p {
+    margin: 0 0 5px 0;
+    color: #666;
+    font-size: 0.95em;
+}
+
+.notice-item .notice-date, .notice-item .notice-time {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 0.85em;
+    color: #888;
+}
+
+.notice-item .notice-time {
+    top: 30px;
+}
+
+.notice-item .notice-text {
+    font-size: 0.9em;
+    line-height: 1.4;
+    color: #444;
+    word-wrap:break-word;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+/* Estilização da barra de rolagem para navegadores WebKit */
+.notice-board-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.notice-board-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.notice-board-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.notice-board-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+/* Calendário */
+.calendar-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Para garantir a rolagem do corpo do calendário */
+}
+
+.calendar-header {
+    display: grid;
+    grid-template-columns: 50px repeat(7, 1fr); /* Coluna de tempo e 7 dias */
+    gap: 1px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+
+.day-header {
+    padding: 5px 0;
+}
+
+
+.calendar-body {
+    display: grid;
+    grid-template-columns: 50px repeat(7, 1fr); /* Coluna de tempo e 7 dias */
+    gap: 1px; /* Linhas finas entre as células */
+    background-color: #eee; /* Cor das linhas */
+    border-radius: 8px;
+    overflow-y: auto; /* Barra de rolagem vertical para horários */
+    max-height: 450px; /* Altura máxima para ativar a rolagem */
+    grid-auto-rows: minmax(60px, auto);
+}
+
+.time-slot {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    font-size: 0.9em;
+    color: #777;
+    border-bottom: 1px solid #eee;
+    box-sizing: border-box; /* Garante que padding não aumente a altura */
+    background-color: #fff;
+    grid-column: 1;/* Garante que cada time-slot esteja na primeira coluna do grid pai */
+    /* A propriedade grid-row: span 1; é implícita, mas pode ser adicionada para clareza */
+}
+
+.time-slot:last-child {
+    border-bottom: none;
+}
+
+
+.event-slot {
+    background-color: #fff;
+    padding: 8px; /* Ajuste o padding para o texto */
+    border-bottom: 1px solid #eee;
+    border-left: 1px solid #eee; /* Adiciona borda esquerda para separar as colunas */
+    display: flex;
+    align-items: flex-start; /* Alinha o texto ao topo da célula */
+    /* justify-content: center; */ /* Remova se quiser texto alinhado à esquerda */
+    text-align: left; /* Garante que o texto comece à esquerda */
+    /* REMOVA height: 60px; */
+    /* height: 60px; <--- REMOVA ESTA LINHA */
+    font-size: 0.85em; /* Ajuste o tamanho da fonte para caber mais texto */
+    color: #333;
+    overflow-wrap: break-word; /* Garante quebras de palavra */
+    word-wrap: break-word;     /* Compatibilidade */
+    white-space: normal;       /* Permite múltiplas linhas */
+    box-sizing: border-box;
+}
+
+.event-slot:hover {
+    background-color: #f0f0f0; /* Feedback visual ao passar o mouse */
+}
+
+.event-slot.event { /* Estilo para eventos marcados */
+    background-color: #d1e7dd; /* Cor de fundo para eventos (verde claro) */
+    border-radius: 5px;
+    margin: 2px; /* Margem para separar visualmente do slot */
+    padding: 8px;
+    color: #216f49; /* Cor do texto do evento (verde escuro) */
+    font-weight: bold;
+    /* display: flex; align-items: center; justify-content: center; text-align: center; */
+    /* Estas propriedades podem causar o texto do evento a não quebrar linha ou não alinhar ao topo. */
+    /* Se você quer texto multilinha alinhado ao topo-esquerda, remova justify-content: center e align-items: center */
+    /* e volte text-align: left; para cá */
+    align-items: flex-start; /* Força o alinhamento ao topo, mesmo com a classe .event */
+    text-align: left;       /* Força o alinhamento à esquerda, mesmo com a classe .event */
+    justify-content: flex-start; /* Alinha o conteúdo ao início (esquerda-topo) */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+/* Cores para os eventos do calendário */
+.event[data-day="dom"].event { background-color: #ffcccc; color: #cc0000; } /* Domingo - Vermelho */
+.event[data-day="seg"].event { background-color: #ffe0b2; color: #e65100; } /* Segunda - Laranja */
+.event[data-day="ter"].event { background-color: #fff9c4; color: #fbc02d; } /* Terça - Amarelo */
+.event[data-day="qua"].event { background-color: #c8e6c9; color: #388e3c; } /* Quarta - Verde */
+.event[data-day="qui"].event { background-color: #bbdefb; color: #1976d2; } /* Quinta - Azul claro */
+.event[data-day="sex"].event { background-color: #e1bee7; color: #880e4f; } /* Sexta - Roxo */
+.event[data-day="sab"].event { background-color: #cfd8dc; color: #455a64; } /* Sábado - Cinza */
+
+
+/* Estilização da barra de rolagem do calendário para navegadores WebKit */
+.calendar-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.calendar-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.calendar-body::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.calendar-body::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+    margin-top: auto; /* Empurra o footer para a parte inferior */
+}
+
+.contact-info p {
+    margin: 0;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.social-media {
+    display: flex;
+    align-items: center;
+}
+
+.social-media p {
+    margin: 0 15px 0 0;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.social-media a {
+    color: #333;
+    font-size: 1.5em;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #007bff; /* Cor ao passar o mouse nos ícones */
+}
+
+/* Estilos para as novas páginas */
+.profile-dashboard {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* 1 parte para a coluna esquerda, 2 para a direita */
+    gap: 30px; /* Espaçamento entre as colunas */
+    width: 90%;
+    max-width: 1200px; /* Largura máxima para a área de perfil */
+    margin: 30px auto; /* Centraliza */
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.profile-column {
+    /* Estilos comuns para ambas as colunas */
+    background-color: #fff; /* Fundo branco para as colunas internas */
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    display: flex; /* Usar flexbox para organizar conteúdo interno */
+    flex-direction: column;
+    align-items: center; /* Centraliza itens na coluna (avatar, título) */
+}
+
+/* Coluna de Informações Acadêmicas (Esquerda) */
+.academic-info-column {
+    /* Pode ter estilos específicos aqui se precisar */
+    text-align: center;
+}
+
+.profile-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Torna a imagem circular */
+    overflow: hidden; /* Garante que a imagem não vaze */
+    margin-bottom: 25px;
+    border: 3px solid #ffcc66; /* Borda ao redor do avatar */
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+}
+
+.profile-academic-info {
+    width: 100%; /* Ocupa a largura total da coluna */
+    text-align: left; /* Alinha o texto à esquerda dentro desta div */
+}
+
+.profile-academic-info h3 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    text-align: center; /* Centraliza o título */
+}
+
+.profile-academic-info p {
+    margin-bottom: 10px;
+    font-size: 1.05em;
+    color: #555;
+    line-height: 1.5;
+}
+
+.profile-academic-info strong {
+    color: #333;
+}
+
+/* Coluna de Informações Pessoais (Direita) - Formulário */
+.personal-info-column {
+    /* Pode ter estilos específicos aqui se precisar */
+}
+
+.personal-info-column h3 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 1.4em;
+    text-align: center;
+}
+
+.personal-info-form {
+    width: 100%;
+    /* Remove padding/margin que estava no .profile-card anterior */
+}
+
+.form-group {
+    margin-bottom: 18px; /* Espaço entre os grupos de formulário */
+    text-align: left; /* Alinha rótulos e inputs à esquerda */
+}
+
+.form-group label {
+    display: block; /* Cada rótulo em sua própria linha */
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #444;
+    font-size: 0.95em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="tel"],
+.form-group input[type="email"] {
+    width: calc(100% - 24px); /* Full width menos padding */
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #333;
+    background-color: #f9f9f9; /* Um leve fundo para os inputs */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #ffcc66;
+    box-shadow: 0 0 0 3px rgba(255, 204, 102, 0.2); /* Sombra suave ao focar */
+    outline: none; /* Remove o contorno padrão do navegador */
+}
+
+.form-group input[readonly] {
+    background-color: #eee; /* Fundo diferente para campos somente leitura */
+    cursor: not-allowed;
+    border-color: #ccc;
+    color: #777;
+}
+
+.form-actions {
+    margin-top: 30px;
+    text-align: right; /* Alinha o botão "Salvar" à direita */
+}
+
+.btn-save {
+    background-color: #ffcc66;
+    color: #333;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-save:hover {
+    background-color: #ffbb33;
+    transform: translateY(-2px); /* Pequeno efeito de elevação */
+}
+
+/* Estilos para o botão Editar Perfil */
+.btn-edit {
+    background-color: #ffcc66; /* Cor azul para "Editar" */
+    color: #333;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-right: 15px; /* Espaço entre "Editar" e "Salvar" */
+}
+
+.btn-edit:hover {
+    background-color: #ffbb33;
+    transform: translateY(-2px);
+}
+
+/* Estilos para botões desabilitados */
+.btn-save:disabled,
+.btn-edit:disabled {
+    background-color: #cccccc; /* Cor cinza para desabilitado */
+    color: #666666;
+    cursor: not-allowed;
+    transform: none; /* Remove efeito de hover/press */
+    box-shadow: none;
+}
+
+/* Ajuste o alinhamento dos botões se necessário, já que agora são dois */
+.form-actions {
+    margin-top: 30px;
+    text-align: right; /* Mantém alinhado à direita */
+}
+
+.frequency-card,
+.grades-card,
+.classes-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px; /* Largura padrão para as cards de conteúdo */
+    margin: 30px auto; /* Centraliza e adiciona margem */
+    text-align: center;
+}
+
+.frequency-card h2,
+.grades-card h2,
+.classes-card h2 {
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+
+/* Estilos de Tabela (Frequência e Notas) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 1em;
+    color: #444;
+}
+
+table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #333;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Estilos de Aulas */
+.class-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Cria colunas flexíveis */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.class-item {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Para empurrar o botão para baixo */
+}
+
+.class-item h3 {
+    color: #007bff; /* Ou uma cor que combine com a Sanquim */
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.class-item p {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.btn-class-details {
+    display: inline-block;
+    background-color: #ffcc66;
+    color: #333;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-top: 15px; /* Espaçamento acima do botão */
+    align-self: flex-start; /* Alinha o botão à esquerda */
+    transition: background-color 0.3s ease;
+}
+
+.btn-class-details:hover {
+    background-color: #ffbb33;
+}
+
+
+
+/* Responsividade Básica */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 10px 20px;
+    }
+    .nav-links li {
+        margin-left: 20px;
+    }
+    .welcome-card {
+        width: 80%;
+        margin-left: 40px;
+        padding: 25px 30px;
+    }
+    .dashboard-grid {
+        grid-template-columns: 1fr; /* Empilha os elementos em telas menores */
+        width: calc(100% - 80px);
+    }
+    .calendar-container {
+        padding: 15px;
+    }
+    .calendar-header, .calendar-body {
+        font-size: 0.9em;
+    }
+    .time-slot, .event-slot {
+        height: 50px; /* Reduz a altura dos slots */
+    }
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 20px;
+    }
+    .social-media {
+        margin-top: 10px;
+    }
+    .social-media p {
+        margin: 0 10px 0 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-links {
+        margin-top: 15px;
+        width: 100%;
+    }
+    .nav-links ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .nav-links li {
+        margin: 5px 15px;
+    }
+    .welcome-card {
+        width: 90%;
+        margin-left: 0;
+        align-self: center; /* Centraliza o card */
+        text-align: center;
+    }
+    .dashboard-grid {
+        width: 90%;
+    }
+    .notice-board-header h3 {
+        font-size: 1.5em;
+    }
+    .notice-board-content {
+        max-height: 300px; /* Ajusta a altura máxima para rolagem em telas menores */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px;
+    }
+    .navbar .logo img {
+        max-width: 120px;
+    }
+    .nav-links a {
+        font-size: 1em;
+    }
+    .content-area {
+        padding: 20px;
+    }
+    .welcome-card h1 {
+        font-size: 1.8em;
+    }
+    .welcome-card p {
+        font-size: 1em;
+    }
+    .carousel-container{
+        height: 200px;
+    }
+    .dashboard-grid {
+        gap: 20px;
+    }
+    .notice-board-header .fa-bell {
+        font-size: 1.5em;
+    }
+    .notice-board-header h3 {
+        font-size: 1.3em;
+    }
+    .calendar-header, .calendar-body {
+        font-size: 0.8em;
+    }
+    .time-slot, .event-slot {
+        height: 40px;
+        padding: 3px;
+    }
+    .event-slot.event {
+        font-size: 0.75em;
+    }
+    .footer {
+        padding: 10px 15px;
+        font-size: 0.8em;
+    }
+    .social-media a {
+        font-size: 1.2em;
+    }
+
+/* Responsividade para a página de perfil */
+@media (max-width: 768px) {
+    .profile-dashboard {
+        grid-template-columns: 1fr; /* As colunas ficam em uma única coluna em telas menores */
+        gap: 20px;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .profile-column {
+        padding: 20px;
+    }
+
+    .profile-avatar {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-academic-info h3,
+    .personal-info-column h3 {
+        font-size: 1.2em;
+        margin-bottom: 15px;
+    }
+
+    .profile-academic-info p {
+        font-size: 0.95em;
+    }
+
+    .form-group input {
+        font-size: 0.95em;
+        padding: 10px;
+    }
+
+    .btn-save {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-dashboard {
+        padding: 15px;
+        margin: 15px auto;
+    }
+    .profile-column {
+        padding: 15px;
+    }
+    .profile-avatar {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 15px;
+    }
+}
+}

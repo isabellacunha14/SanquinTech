@@ -1,0 +1,98 @@
+.contact-container {
+background-color: rgba(255, 255, 255, 0.9);
+border-radius: 15px;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+padding: 30px;
+width: 90%;
+max-width: 800px;
+margin: 30px auto;
+}
+
+.contact-container h1 {
+color: #333;
+text-align: center;
+margin-bottom: 30px;
+}
+
+.form-group {
+margin-bottom: 20px;
+}
+
+.form-group label {
+display: block;
+margin-bottom: 8px;
+font-weight: bold;
+color: #444;
+}
+
+.form-group input,
+.form-group textarea {
+width: calc(100% - 24px);
+padding: 12px;
+border: 1px solid #ddd;
+border-radius: 8px;
+font-size: 1em;
+color: #333;
+background-color: #f9f9f9;
+transition: border-color 0.3s ease, box-shadow 0.3s ease;
+box-sizing: border-box; /* Importante para o width calculado */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+border-color: #ffcc66;
+box-shadow: 0 0 0 3px rgba(255, 204, 102, 0.2);
+outline: none;
+}
+
+.form-group textarea {
+resize: vertical; /* Permite ao usuário redimensionar a altura */
+min-height: 150px;
+}
+
+.btn-send {
+background-color: #ffcc66;
+color: #333;
+padding: 12px 25px;
+border: none;
+border-radius: 8px;
+font-size: 1em;
+font-weight: bold;
+cursor: pointer;
+transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-send:hover {
+background-color: #ffbb33;
+transform: translateY(-2px);
+}
+
+.success-message {
+color: green;
+margin-top: 20px;
+font-weight: bold;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+.contact-container {
+padding: 20px;
+margin: 20px auto;
+}
+.contact-container h1 {
+font-size: 1.8em;
+margin-bottom: 20px;
+}
+.form-group {
+margin-bottom: 15px;
+}
+.form-group input,
+.form-group textarea {
+font-size: 0.95em;
+padding: 10px;
+}
+.btn-send {
+font-size: 0.95em;
+padding: 10px 20px;
+}
+}

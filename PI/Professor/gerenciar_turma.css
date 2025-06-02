@@ -1,0 +1,312 @@
+/* Estilos Específicos para a Página Gerenciar Turma */
+
+.manage-turma-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    text-align: center; /* Centraliza o título da turma */
+}
+
+.manage-turma-container h1 {
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 2.2em;
+}
+
+.manage-turma-container p#turmaDiscipline {
+    color: #555;
+    font-size: 1.1em;
+    margin-bottom: 25px;
+}
+
+/* Estilos das Abas */
+.tabs-container {
+    background-color: #fcfcfc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+    text-align: left; /* Alinha o conteúdo das abas à esquerda */
+}
+
+.tabs-nav {
+    display: flex;
+    justify-content: flex-start; /* Alinha os botões de aba à esquerda */
+    border-bottom: 2px solid #eee;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Quebra linha se muitos botões */
+    gap: 10px; /* Espaço entre botões */
+}
+
+.tab-button {
+    background-color: #e9ecef;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #666;
+    cursor: pointer;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tab-button:hover:not(.active) {
+    background-color: #dee2e6;
+    color: #333;
+}
+
+.tab-button.active {
+    background-color: #fff; /* Fundo branco para a aba ativa */
+    color: #007bff; /* Cor do texto para a aba ativa */
+    border-bottom: 2px solid #007bff; /* Borda inferior para a aba ativa */
+    position: relative;
+    z-index: 1; /* Garante que a borda ativa se sobreponha à borda do nav */
+    margin-bottom: -2px; /* Ajusta para a borda do nav não aparecer por trás */
+}
+
+.tabs-content {
+    padding: 20px 0; /* Espaço interno para o conteúdo das abas */
+}
+
+.tab-pane {
+    display: none; /* Oculta todas as abas por padrão */
+}
+
+.tab-pane.active {
+    display: block; /* Mostra apenas a aba ativa */
+}
+
+/* Estilos Comuns para Formulários dentro das Abas */
+.tab-pane h3 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+    text-align: center;
+}
+
+.tab-pane .form-group {
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+.tab-pane .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #444;
+    font-size: 0.95em;
+}
+
+.tab-pane .form-group input[type="date"],
+.tab-pane .form-group input[type="text"],
+.tab-pane .form-group textarea,
+.tab-pane .form-group input[type="file"] {
+    width: calc(100% - 24px); /* Full width menos padding */
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.tab-pane .form-group input:focus,
+.tab-pane .form-group textarea:focus {
+    border-color: #ffcc66;
+    box-shadow: 0 0 0 3px rgba(255, 204, 102, 0.2);
+    outline: none;
+}
+
+.tab-pane textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.tab-pane .btn-save {
+    background-color: #28a745; /* Cor verde para botões de salvar */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+    width: auto; /* Ajusta a largura para o conteúdo do botão */
+    display: block; /* Ocupa a largura total para centralizar */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tab-pane .btn-save:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* Estilos para lista de alunos (frequência e notas) */
+.students-list {
+    margin-top: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #fff;
+    max-height: 400px; /* Limita a altura para rolagem */
+    overflow-y: auto;
+}
+
+.student-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.student-item:last-child {
+    border-bottom: none;
+}
+
+.student-item span {
+    font-size: 1em;
+    color: #333;
+    flex-grow: 1; /* Ocupa o máximo de espaço */
+    text-align: left;
+}
+
+.student-item .frequencia-status {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaço entre os radio buttons */
+}
+
+.student-item .nota-input {
+    width: 80px; /* Largura para o campo de nota */
+    text-align: center;
+}
+
+/* Histórico de Registros/Frequências/Planejamentos */
+.recent-frequencias,
+.recent-notas,
+.recent-registros,
+.recent-planejamentos {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px dashed #ddd;
+}
+
+.recent-frequencias h4,
+.recent-notas h4,
+.recent-registros h4,
+.recent-planejamentos h4 {
+    color: #007bff;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.recent-frequencias ul,
+.recent-notas ul,
+.recent-registros ul,
+.recent-planejamentos ul {
+    list-style: none;
+    padding: 0;
+    max-height: 250px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.recent-frequencias li,
+.recent-notas li,
+.recent-registros li,
+.recent-planejamentos li {
+    padding: 10px 15px;
+    border-bottom: 1px dashed #f0f0f0;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.recent-frequencias li:last-child,
+.recent-notas li:last-child,
+.recent-registros li:last-child,
+.recent-planejamentos li:last-child {
+    border-bottom: none;
+}
+
+.file-info {
+    font-size: 0.85em;
+    color: #888;
+    margin-top: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .manage-turma-container {
+        padding: 20px;
+        margin: 20px auto;
+    }
+    .manage-turma-container h1 {
+        font-size: 1.8em;
+    }
+    .manage-turma-container p#turmaDiscipline {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+    .tabs-nav {
+        flex-direction: column; /* Botões de aba em coluna */
+        gap: 5px;
+    }
+    .tab-button {
+        border-radius: 8px; /* Cantos arredondados em todos os lados */
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+    .tab-button.active {
+        border-bottom: none; /* Remove a borda inferior */
+        border-right: 3px solid #007bff; /* Adiciona borda lateral ativa */
+        margin-right: -3px; /* Ajusta para a borda */
+        background-color: #fff;
+    }
+    .tabs-content {
+        padding: 15px 0;
+    }
+    .tab-pane h3 {
+        font-size: 1.4em;
+        margin-bottom: 15px;
+    }
+    .tab-pane .form-group input,
+    .tab-pane .form-group textarea {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+    .student-item {
+        flex-direction: column; /* Alunos em coluna */
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .student-item .frequencia-status {
+        width: 100%;
+        justify-content: flex-end; /* Alinha status à direita */
+    }
+}
+
+@media (max-width: 480px) {
+    .manage-turma-container {
+        padding: 15px;
+    }
+    .tab-button {
+        font-size: 0.85em;
+        padding: 8px 12px;
+    }
+    .tab-pane h3 {
+        font-size: 1.2em;
+    }
+}

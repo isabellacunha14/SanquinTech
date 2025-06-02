@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Sanquim Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="contato.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="background-container">
+        <header class="navbar">
+            <div class="logo">
+                <img src="../Imagens/logosanquim.png" alt="Sanquim Tech Logo">
+            </div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="#" class="nav-item" data-page="portalaluno">Início</a></li>
+                    <li><a href="#" class="nav-item" data-page="perfilaluno">Perfil</a></li>
+                    <li><a href="#" class="nav-item" data-page="frequenciasaluno">Frequência</a></li>
+                    <li><a href="#" class="nav-item" data-page="notasaluno">Notas</a></li>
+                    <li><a href="#" class="nav-item" data-page="aulasaluno">Aulas</a></li>
+                    <li><a href="#" class="nav-item" data-page="contatoaluno">Contato</a></li>
+                    <li><a href="#" class="nav-item" data-page="sair">Sair</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="content-area">
+        <div class="contact-container">
+            <h1>Entre em Contato</h1>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="subject">Assunto:</label>
+                    <input type="text" id="subject" name="subject" placeholder="Digite o assunto da sua mensagem" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensagem:</label>
+                    <textarea id="message" name="message" rows="10" placeholder="Escreva sua mensagem aqui" required></textarea>
+                </div>
+                <button type="submit" class="btn-send">Enviar Mensagem</button>
+                <p id="messageSent" class="success-message"></p>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="contact-info">
+            <p>Praça Duque de Caxias, 169 - Centro - Mogi Mirim</p>
+        </div>
+        <div class="social-media">
+                <p>Nos siga nas redes sociais.</p>
+                <a href="https://web.facebook.com/sanquim/?_rdc=1&_rdr#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/colegiosanquim/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UCc1HL8KqpsJat7hDp90mnag" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+    </footer>
+</div>
+
+<script src="dashboard.js"></script>
+<script src="contato.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Sanquim Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="background-container">
+        <header class="navbar">
+            <div class="logo">
+                <img src="../Imagens/logosanquim.png" alt="Sanquim Tech Logo">
+            </div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="#" class="nav-item" data-page="portalaluno">Início</a></li>
+                    <li><a href="#" class="nav-item" data-page="perfilaluno">Perfil</a></li>
+                    <li><a href="#" class="nav-item" data-page="frequenciasaluno">Frequência</a></li>
+                    <li><a href="#" class="nav-item" data-page="notasaluno">Notas</a></li>
+                    <li><a href="#" class="nav-item" data-page="aulasaluno">Aulas</a></li>
+                    <li><a href="#" class="nav-item" data-page="contatoaluno">Contato</a></li>
+                    <li><a href="#" class="nav-item" data-page="sair">Sair</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="content-area">
+            <div class="profile-dashboard">
+                <div class="profile-column academic-info-column">
+                    <div class="profile-avatar">
+                        <img src="../Imagens/avatar.png" alt="Avatar do Aluno">
+                    </div>
+                    <div class="profile-academic-info">
+                        <h3>Informações Acadêmicas</h3>
+                        <p><strong>Nome:</strong> João da Silva</p>
+                        <p><strong>Matrícula:</strong> 123456</p>
+                        <p><strong>RA:</strong> 987654321</p>
+                        <p><strong>Curso:</strong> Análise e Desenvolvimento de Sistemas</p>
+                        <p><strong>Período:</strong> 3º Semestre</p>
+                    </div>
+                </div>
+
+                <div class="profile-column personal-info-column">
+                    <h3>Informações Pessoais</h3>
+                    <form id="personalInfoForm" class="personal-info-form">
+                        <div class="form-group">
+                            <label for="dob">Data de Nascimento:</label>
+                            <input type="date" id="dob" name="dob" value="2000-01-15" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="cpf">CPF:</label>
+                            <input type="text" id="cpf" name="cpf" value="123.456.789-00" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="rg">RG:</label>
+                            <input type="text" id="rg" name="rg" value="98.765.432-1" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Endereço:</label>
+                            <input type="text" id="address" name="address" value="Rua das Flores, 123" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="district">Bairro:</label>
+                            <input type="text" id="district" name="district" value="Centro" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">Cidade:</label>
+                            <input type="text" id="city" name="city" value="Mogi Mirim" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefone:</label>
+                            <input type="tel" id="phone" name="phone" value="(19) 98765-4321" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email" name="email" value="joao.silva@aluno.sanquimtech.com" readonly>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" id="editProfileBtn" class="btn-edit">Editar Perfil</button>
+                            <button type="submit" id="saveProfileBtn" class="btn-save" disabled>Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="contact-info">
+                <p>Praça Duque de Caxias, 169 - Centro - Mogi Mirim</p>
+            </div>
+            <div class="social-media">
+                <p>Nos siga nas redes sociais.</p>
+                <a href="https://web.facebook.com/sanquim/?_rdc=1&_rdr#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/colegiosanquim/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UCc1HL8KqpsJat7hDp90mnag" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
