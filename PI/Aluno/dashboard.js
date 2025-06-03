@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 // Lógica de logout aqui
                 alert('Você clicou em Sair!');
-                window.location.href = '../Login/telalogin.html';
+                window.location.href = '../Login/login.html';
             }
 
 
