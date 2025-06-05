@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Turma - Portal do Professor Sanquim Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./professor-dashboard.css"> 
+    <link rel="stylesheet" href="./minhas-turmas.css"> <link rel="stylesheet" href="./gerenciar-turma.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="background-container">
+        <header class="navbar">
+            <div class="logo">
+                <img src="../Imagens/logosanquim.png" alt="Sanquim Tech Logo">
+            </div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="professor-dashboard.html" class="nav-item" data-page="professor-dashboard">Início</a></li>
+                    <li><a href="minhas-turmas.html" class="nav-item active" data-page="minhas-turmas">Minhas Turmas</a></li>
+                    <li><a href="professor-avisos.html" class="nav-item" data-page="professor-avisos">Avisos</a></li>
+                    <li><a href="professor-contato.html" class="nav-item" data-page="professor-contato">Contato</a></li>
+                    <li><a href="../Login/login.html" class="nav-item" data-page="sair">Sair</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="content-area">
+            <div class="main-dashboard-card"> 
+                <div class="page-header">
+                    <h2 id="turmaTitulo"><i class="fas fa-users"></i> Gerenciando Turma [Nome da Turma]</h2>
+                    <p>Gerencie a frequência, notas, aulas e materiais desta turma.</p>
+                </div>
+
+                <div class="tabs-navigation">
+                    <button class="tab-button active" data-tab="frequencia">Frequência</button>
+                    <button class="tab-button" data-tab="notas">Notas</button>
+                    <button class="tab-button" data-tab="aulas">Registro de Aulas</button>
+                    <button class="tab-button" data-tab="planejamento">Planejamento & Materiais</button>
+                </div>
+
+                <div class="tab-content-container">
+                    <div id="frequencia" class="tab-pane active">
+                        <h3>Controle de Frequência</h3>
+                        <p>Aqui você poderá registrar a frequência dos alunos.</p>
+                        </div>
+                    <div id="notas" class="tab-pane">
+                        <h3>Gestão de Notas</h3>
+                        <div class="notas-controls">
+                            <label for="avaliacaoSelect">Avaliação/Bimestre:</label>
+                            <select id="avaliacaoSelect">
+                                <option value="1bim">1º Bimestre</option>
+                                <option value="2bim">2º Bimestre</option>
+                                <option value="3bim">3º Bimestre</option>
+                                <option value="4bim">4º Bimestre</option>
+                                <option value="final">Prova Final</option>
+                            </select>
+                            <button id="salvarNotas"><i class="fas fa-save"></i> Salvar Notas</button>
+                        </div>
+                        
+                        <table class="notas-table">
+                            <thead>
+                                <tr>
+                                    <th>Nome do Aluno</th>
+                                    <th>RA</th>
+                                    <th>Nota (0-100)</th>
+                                    <th>Observações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="notasTableBody">
+                                <tr><td colspan="4">Carregando alunos...</td></tr> 
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="aulas" class="tab-pane">
+                        <h3>Registro de Aulas e Ocorrências</h3>
+                        
+                        <div class="aula-form-container">
+                            <h4>Registrar Nova Aula</h4>
+                            <div class="form-group">
+                                <label for="aulaDate">Data da Aula:</label>
+                                <input type="date" id="aulaDate" value="${new Date().toISOString().split('T')[0]}">
+                            </div>
+                            <div class="form-group">
+                                <label for="aulaContent">Conteúdo da Aula:</label>
+                                <textarea id="aulaContent" rows="5" placeholder="Descreva o que foi abordado na aula, atividades, etc."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="aulaOcorrencias">Ocorrências (Opcional):</label>
+                                <textarea id="aulaOcorrencias" rows="3" placeholder="Registre ocorrências importantes, destaques ou problemas."></textarea>
+                            </div>
+                            <button id="registrarAulaBtn"><i class="fas fa-plus-circle"></i> Registrar Aula</button>
+                        </div>
+
+                        <hr class="separator">
+
+                        <h4>Histórico de Aulas Registradas</h4>
+                        <div class="aula-history-container" id="aulaHistoryContainer">
+                            <p>Nenhuma aula registrada ainda.</p>
+                            </div>
+                    </div>
+                    <div id="planejamento" class="tab-pane">
+                        <h3>Planejamento de Aulas e Materiais</h3>
+                        
+                        <div class="planejamento-section">
+                            <h4><i class="fas fa-clipboard-list"></i> Elaborar Planejamento</h4>
+                            <div class="form-group">
+                                <label for="planejamentoText">Conteúdo do Planejamento:</label>
+                                <textarea id="planejamentoText" rows="15" placeholder="Escreva aqui seu plano de aula detalhado para esta turma, objetivos, metodologias, etc."></textarea>
+                            </div>
+                            <button id="salvarPlanejamentoBtn"><i class="fas fa-save"></i> Salvar Planejamento</button>
+                        </div>
+
+                        <hr class="separator">
+
+                        <div class="materiais-section">
+                            <h4><i class="fas fa-upload"></i> Upload de Materiais</h4>
+                            <div class="form-group">
+                                <label for="materialName">Nome/Descrição do Material:</label>
+                                <input type="text" id="materialName" placeholder="Ex: Slides Aula 1, Lista de Exercícios">
+                            </div>
+                            <div class="form-group">
+                                <label for="materialLink">Link do Material (URL ou simulação de arquivo):</label>
+                                <input type="text" id="materialLink" placeholder="Ex: http://meusite.com/aula1.pdf ou nome_arquivo.pdf">
+                            </div>
+                            <button id="adicionarMaterialBtn"><i class="fas fa-plus"></i> Adicionar Material</button>
+
+                            <h5 class="materials-list-title">Materiais Disponíveis:</h5>
+                            <ul id="materialsList" class="materials-list">
+                                <li class="no-materials-message">Nenhum material adicionado ainda.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="contact-info">
+                <p>Praça Duque de Caxias, 169 - Centro - Mogi Mirim</p>
+            </div>
+            <div class="social-media">
+                <p>Nos siga nas redes sociais.</p>
+                <a href="https://web.facebook.com/sanquim/?_rdc=1&_rdr#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/colegiosanquim/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UCc1HL8KqpsJat7hDp90mnag" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="./gerenciar-turma.js"></script> </body>
+</html>

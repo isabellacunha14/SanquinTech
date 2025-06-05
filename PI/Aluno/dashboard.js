@@ -95,7 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 5000); // Muda de slide a cada 5 segundos
 
     // //Pausar carrossel ao passar o mouse
-    const carouselContainer = document.querySelector('.carousel-container');
     carouselContainer.addEventListener('mouseenter', () => {
          clearInterval(autoSlideInterval);
     });

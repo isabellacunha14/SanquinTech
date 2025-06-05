@@ -24,9 +24,10 @@ body {
     justify-content: flex-start;
     align-items: center;
     padding: 15px 40px;
-    background-color: transparent; /* Fundo da navbar */
-    position: relative; /* Para o destaque do item ativo */
-    z-index: 10;
+    background-color:transparent;
+    position: relative;
+    top: 0;
+    z-index: 1;
 }
 
 .navbar .logo {
@@ -34,7 +35,7 @@ body {
 }
 
 .navbar .logo img {
-    max-width: 250px; /* tamanho do logotipo */
+    max-width: 200px; /* tamanho do logotipo */
     height: auto;
 }
 
@@ -153,8 +154,9 @@ body {
 .carousel-slide img {
     width: 100%;
     height: 100%;
-    object-fit:fill; /* Garante que a imagem cubra o slide sem distorcer */
+    object-fit:cover; /* Garante que a imagem cubra o slide sem distorcer */
     border-radius: 15px; /* Para bordas arredondadas da imagem */
+    display: block;
 }
 
 .carousel-slide .slide-content {

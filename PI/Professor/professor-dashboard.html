@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard do Professor - Sanquim Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./professor-dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="background-container">
+        <header class="navbar">
+            <div class="logo">
+                <img src="../Imagens/logosanquim.png" alt="Sanquim Tech Logo">
+            </div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="professor-dashboard.html" class="nav-item" data-page="professor-dashboard">Início</a></li>
+                    <li><a href="minhas-turmas.html" class="nav-item" data-page="minhas-turmas">Minhas Turmas</a></li>
+                    <li><a href="professor-avisos.html" class="nav-item" data-page="professor-avisos">Avisos</a></li>
+                    <li><a href="professor-contato.html" class="nav-item" data-page="professor-contato">Contato</a></li>
+                    <li><a href="../Login/login.html" class="nav-item" data-page="sair">Sair</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="content-area">
+            <div class="main-dashboard-card"> 
+                <div class="welcome-section">
+                    <h2>Olá, Professor(a) <span>[Nome do Professor]</span>.</h2>
+                    <p>Bem-vindo(a) ao Portal do Professor SanquimTech.</p>
+                </div>
+                        <div class="dashboard-grid"> 
+                            <div class="grid-item notice-board-container">
+                                <h3><i class="fas fa-bell"></i> Quadro de Avisos</h3>
+                                <div class="notice-list" id="professorNoticeBoard">
+                                    <div class="notice-item">
+                                        <div class="notice-item-header">
+                                            <p><strong>Reunião de Coordenação</strong></p>
+                                            <span class="notice-date">28/05</span>
+                                        </div>
+                                            <p class="notice-detail">Importante reunião sobre o planejamento do próximo semestre. Favor confirmar presença.</p>
+                                    </div>
+                                    <div class="notice-item">
+                                        <div class="notice-item-header">
+                                            <p><strong>Entrega de Notas - Prazo Final</strong></p>
+                                            <span class="notice-date">15/06</span>
+                                        </div>
+                                            <p class="notice-detail">Lembrete: O prazo final para a entrega das notas do 1º bimestre é 15/06.</p>
+                                    </div>
+                                    <div class="notice-item">
+                                        <div class="notice-item-header">
+                                            <p><strong>Semana de Recuperação</strong></p>
+                                            <span class="notice-date">01/07</span>
+                                        </div>
+                                            <p class="notice-detail">As provas de recuperação do 1º bimestre ocorrerão de 01/07 a 05/07. Consulte o calendário.</p>
+                                    </div>
+                                    <div class="notice-item">
+                                        <div class="notice-item-header">
+                                            <p><strong>Novas Diretrizes Pedagógicas</strong></p>
+                                            <span class="notice-date">03/06</span>
+                                        </div>
+                                            <p class="notice-detail">Material sobre as novas diretrizes para o 2º semestre disponível na área de documentos da coordenação.</p>
+                                    </div>
+                                    <div class="notice-item">
+                                        <div class="notice-item-header">
+                                            <p><strong>Workshop de Metodologias Ativas</strong></p>
+                                            <span class="notice-date">10/06</span>
+                                        </div>
+                                            <p class="notice-detail">Inscrições abertas para o workshop de metodologias ativas. Vagas limitadas! Confira na secretaria.</p>
+                                    </div>
+                                    <div class="notice-item">
+                                        <div class="notice-item-header">
+                                            <p><strong>Férias Escolares</strong></p>
+                                            <span class="notice-date">15/07</span>
+                                        </div>
+                                            <p class="notice-detail">Informamos que o recesso escolar de meio de ano será de 15/07 a 30/07. Boas férias!</p>
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="grid-item schedule-container">
+                                    <h3><i class="fas fa-calendar-alt"></i> Meu Horário</h3>
+                                        <div class="schedule-filters">
+                                            <label for="filterClass">Filtrar por Turma:</label>
+                                                <select id="filterClass">
+                                                <option value="all">Todas as Turmas</option>
+                                                </select>
+
+                                            <label for="filterSubject">Filtrar por Disciplina:</label>
+                                                <select id="filterSubject">
+                                                <option value="all">Todas as Disciplinas</option>
+                                                </select>
+
+                                            <button id="resetFilters">Limpar Filtros</button>
+                            <div id="professorSchedule">
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Hora</th>
+                            <th>Seg</th>
+                            <th>Ter</th>
+                            <th>Qua</th>
+                            <th>Qui</th>
+                            <th>Sex</th>
+                        </tr>
+                    </thead>
+                    <tbody id="scheduleBody">
+                        <tr>
+                            <td>08:00</td>
+                            <td data-day="seg" data-time="08:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="ter" data-time="08:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="qua" data-time="08:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="qui" data-time="08:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="sex" data-time="08:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                        </tr>
+                        <tr>
+                            <td>09:00</td>
+                            <td data-day="seg" data-time="09:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="ter" data-time="09:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="qua" data-time="09:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="qui" data-time="09:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="sex" data-time="09:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                        </tr>
+                        <tr>
+                            <td>10:00</td>
+                            <td data-day="seg" data-time="10:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="ter" data-time="10:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="qua" data-time="10:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="qui" data-time="10:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="sex" data-time="10:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                        </tr>
+                        <tr>
+                            <td>11:00</td>
+                            <td data-day="seg" data-time="11:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="ter" data-time="11:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="qua" data-time="11:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="qui" data-time="11:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="sex" data-time="11:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                        </tr>
+                        <tr>
+                            <td>12:00</td>
+                            <td data-day="seg" data-time="12:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="ter" data-time="12:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="qua" data-time="12:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="qui" data-time="12:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="sex" data-time="12:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                        </tr>
+                        <tr>
+                            <td>13:00</td>
+                            <td data-day="seg" data-time="13:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="ter" data-time="13:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="qua" data-time="13:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="qui" data-time="13:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="sex" data-time="13:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                        </tr>
+                        <tr>
+                            <td>14:00</td>
+                            <td data-day="seg" data-time="14:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="ter" data-time="14:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="qua" data-time="14:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="qui" data-time="14:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="sex" data-time="14:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                        </tr>
+                        <tr>
+                            <td>15:00</td>
+                            <td data-day="seg" data-time="15:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="ter" data-time="15:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="qua" data-time="15:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="qui" data-time="15:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="sex" data-time="15:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                        </tr>
+                        <tr>
+                            <td>16:00</td>
+                            <td data-day="seg" data-time="16:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="ter" data-time="16:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="qua" data-time="16:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="qui" data-time="16:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                            <td data-day="sex" data-time="16:00" data-subject="" data-class="" data-room="" data-topic="" data-notes=""></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>     
+            
+<div id="lessonDetailModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h4 id="modalSubject" style="color: #ff8c00;"></h4>
+        <p><strong>Turma:</strong> <span id="modalClass"></span></p>
+        <p><strong>Horário:</strong> <span id="modalTime"></span></p>
+        <p><strong>Dia:</strong> <span id="modalDay"></span></p>
+        <p><strong>Sala:</strong> <span id="modalRoom"></span></p>
+        <p><strong>Tópico:</strong> <span id="modalTopic"></span></p>
+        <p><strong>Observações:</strong> <span id="modalNotes"></span></p>
+    </div>
+</div>
+</main>
+
+        <footer class="footer">
+            <div class="contact-info">
+                <p>Praça Duque de Caxias, 169 - Centro - Mogi Mirim</p>
+            </div>
+            <div class="social-media">
+                <p>Nos siga nas redes sociais.</p>
+                <a href="https://web.facebook.com/sanquim/?_rdc=1&_rdr#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/colegiosanquim/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UCc1HL8KqpsJat7hDp90mnag" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../Aluno/dashboard.js"></script>
+    <script src="./professor-dashboard.js"></script>
+</body>
+</html>
