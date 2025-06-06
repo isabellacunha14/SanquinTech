@@ -108,8 +108,16 @@
                         <div class="planejamento-section">
                             <h4><i class="fas fa-clipboard-list"></i> Elaborar Planejamento</h4>
                             <div class="form-group">
-                                <label for="planejamentoText">Conteúdo do Planejamento:</label>
-                                <textarea id="planejamentoText" rows="15" placeholder="Escreva aqui seu plano de aula detalhado para esta turma, objetivos, metodologias, etc."></textarea>
+                                <label for="planejamentoDate">Data do Planejamento:</label>
+                                <input type="date" id="planejamentoDate" value="${new Date().toISOString().split('T')[0]}">
+                            </div>
+                            <div class="form-group">
+                                <label for="planejamentoSubject">Assunto/Tópico da Aula:</label>
+                                <input type="text" id="planejamentoSubject" placeholder="Ex: Introdução à Álgebra, Revolução Francesa">
+                            </div>
+                            <div class="form-group">
+                                <label for="planejamentoText">Conteúdo Detalhado do Planejamento:</label>
+                                <textarea id="planejamentoText" rows="15" placeholder="Escreva aqui seu plano de aula detalhado para esta turma, objetivos, metodologias, atividades, recursos necessários, etc."></textarea>
                             </div>
                             <button id="salvarPlanejamentoBtn"><i class="fas fa-save"></i> Salvar Planejamento</button>
                         </div>

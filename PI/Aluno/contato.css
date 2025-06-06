@@ -1,7 +1,7 @@
 .contact-container {
 background-color: rgba(255, 255, 255, 0.9);
 border-radius: 15px;
-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 padding: 30px;
 width: 90%;
 max-width: 800px;
@@ -9,7 +9,7 @@ margin: 30px auto;
 }
 
 .contact-container h1 {
-color: #333;
+color: #000000;
 text-align: center;
 margin-bottom: 30px;
 }
@@ -22,7 +22,7 @@ margin-bottom: 20px;
 display: block;
 margin-bottom: 8px;
 font-weight: bold;
-color: #444;
+color: #000000;
 }
 
 .form-group input,
@@ -32,7 +32,7 @@ padding: 12px;
 border: 1px solid #ddd;
 border-radius: 8px;
 font-size: 1em;
-color: #333;
+color: #000000;
 background-color: #f9f9f9;
 transition: border-color 0.3s ease, box-shadow 0.3s ease;
 box-sizing: border-box; /* Importante para o width calculado */
@@ -52,7 +52,7 @@ min-height: 150px;
 
 .btn-send {
 background-color: #ffcc66;
-color: #333;
+color: #000000;
 padding: 12px 25px;
 border: none;
 border-radius: 8px;
@@ -68,7 +68,7 @@ transform: translateY(-2px);
 }
 
 .success-message {
-color: green;
+color: #ffbb33;
 margin-top: 20px;
 font-weight: bold;
 }

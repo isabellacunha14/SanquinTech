@@ -7,7 +7,7 @@
 .main-dashboard-card {
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     padding: 25px;
     width: 90%;
     max-width: 1200px;
@@ -24,10 +24,11 @@
 }
 
 .welcome-section h2 {
-    color: #333;
+    color: #000000;
     font-size: 2.2em;
     font-weight: 700;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
+    text-align: center;
 }
 
 .welcome-section h2 span {
@@ -35,7 +36,8 @@
 }
 
 .welcome-section p {
-    color: #555;
+    text-align: center;
+    color: #000000;
     font-size: 1.1em;
     line-height: 1.5;
 }
@@ -100,6 +102,16 @@
 .schedule-container::-webkit-scrollbar-thumb:hover {
     background: #ffbb33;
 }
+.notice-board-container .fa-bell, .fa-calendar-alt{
+    color: #ffbb33;
+}
+
+.notice-board-container h3{
+    color: #000;
+    font-size: 24px;
+}
+
+
 
 /* Estilos para o Quadro de Avisos */
 .notice-list {
@@ -140,7 +152,7 @@
     flex-shrink: 0; /* A data não encolhe */
     white-space: nowrap; /* Garante que a data não quebre linha */
     text-align: right; /* Mantém alinhamento à direita */
-    color: #999;
+    color: #000000;
     font-size: 0.8em;
     margin-left: 10px; /* Espaço entre o título e a data */
 }
@@ -148,14 +160,14 @@
 
 
 .notice-list .notice-item p strong {
-    color: #ff8c00;
+    color: #000;
     /* Estes estilos antigos para strong e notice-date provavelmente não serão mais necessários */
     /* se você usar o .notice-item-header, mas podem ser mantidos para compatibilidade */
     /* Se vir que está causando problemas, remova-os e confie apenas no .notice-item-header */
 }
 
 .notice-list .notice-item .notice-detail {
-    color: #666;
+    color: #000000;
     font-size: 0.9em;
     margin-top: 5px; /* Mantenha o espaçamento para o detalhe */
 }
@@ -182,18 +194,23 @@
 
 .schedule-container th {
     background-color: #f8f8f8;
-    color: #555;
+    color: #000000;
     font-weight: bold;
 }
 
 .schedule-container td {
     background-color: #fff;
-    color: #333;
+    color: #000000;
 }
 
 .schedule-container td.filled {
-    background-color: #ffe0b2;
+    background-color: #ffd9a0;
     font-weight: 600;
+}
+
+.schedule-container h3{
+    color: #000;
+    font-size: 24px;
 }
 
 /* Estilos do Modal */
@@ -246,7 +263,7 @@
 
 .close-button:hover,
 .close-button:focus {
-    color: #333;
+    color: #000000;
     text-decoration: none;
     cursor: pointer;
 }
@@ -260,11 +277,11 @@
 #lessonDetailModal p {
     margin-bottom: 8px;
     font-size: 1em;
-    color: #555;
+    color: #000000;
 }
 
 #lessonDetailModal p strong {
-    color: #333;
+    color: #000000;
     margin-right: 5px;
 }
 
@@ -279,7 +296,7 @@
 
 .schedule-filters label {
     font-weight: 600;
-    color: #555;
+    color: #000000;
     flex-shrink: 0; /* Impede que a label encolha */
 }
 
@@ -289,7 +306,7 @@
     border-radius: 5px;
     background-color: #f9f9f9;
     font-size: 0.95em;
-    color: #333;
+    color: #000000;
     cursor: pointer;
     flex-grow: 1; /* Permite que o select cresça */
     max-width: 200px; /* Limita a largura máxima do select */
@@ -303,8 +320,8 @@
 
 .schedule-filters button {
     padding: 8px 15px;
-    background-color: #ff8c00; /* Cor laranja do seu tema */
-    color: white;
+    background-color: #ffcc66; /* Cor laranja do seu tema */
+    color: #000000;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -314,8 +331,267 @@
 }
 
 .schedule-filters button:hover {
-    background-color: #e67e00; /* Laranja mais escuro no hover */
+    background-color: #ffbb33; /* Laranja mais escuro no hover */
 }
+
+/* Estilos para a seção de Avisos */
+.main-dashboard-card section.content-section { /* Garante que o content-section tenha padding dentro do card */
+    padding: 20px; /* Adicione padding se não tiver */
+    border-radius: 10px;
+    background-color: #fff; /* Fundo branco para a área de conteúdo */
+}
+
+.avisos-form-container,
+.avisos-history-container {
+    background-color: #f8f8f8;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.avisos-form-container h3,
+.avisos-history-container h3 {
+    color: #ffcc66;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.form-group { /* Reutiliza o estilo de form-group já existente */
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+#publicarAvisoBtn {
+    background-color: #ffcc66;
+    color: #000;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    display: flex; /* Para alinhar o ícone e o texto */
+    align-items: center;
+    gap: 8px; /* Espaço entre o ícone e o texto */
+}
+
+#publicarAvisoBtn:hover {
+    background-color: #ffbb33;
+}
+
+.separator { /* Reutiliza o estilo de separator */
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+    margin: 40px 0;
+}
+
+/* Estilos para a lista de avisos */
+.avisos-list-container {
+    margin-top: 20px;
+}
+
+.aviso-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s ease;
+}
+
+.aviso-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.aviso-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #f0f0f0;
+}
+
+.aviso-header h4 {
+    margin: 0;
+    color: #000;
+    font-size: 1.2em;
+}
+
+.aviso-date {
+    font-size: 0.9em;
+    color: #000;
+}
+
+.aviso-preview {
+    color: #000;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.aviso-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+/*Comentário aleatório pra testar git*/
+
+.aviso-actions button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex; /* Para alinhar o ícone e o texto */
+    align-items: center;
+    gap: 5px; /* Espaço entre o ícone e o texto */
+}
+
+.view-aviso-btn {
+    background-color: #ffcc66; /* Verde */
+    color: white;
+}
+
+.view-aviso-btn:hover {
+    background-color: #ffbb33;
+}
+
+.delete-aviso-btn {
+    background-color: #dc3545; /* Vermelho */
+    color: white;
+}
+
+.delete-aviso-btn:hover {
+    background-color: #c82333;
+}
+
+.no-avisos-message {
+    text-align: center;
+    color: #000;
+    font-style: italic;
+    padding: 20px;
+}
+
+.fa-bullhorn{
+    color: #ffcc66;
+}
+
+/* Estilos específicos para a página de Contato */
+.content-section {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+#pageTitle{
+    text-align: center;
+    color: #000;
+}
+
+#pageTitle .fa-envelope,
+.fa-bullhorn{
+    color: #ffcc66;
+    font-size: 1.3em;
+}
+
+
+
+.contact-container {
+    max-width: 700px; /* Limita a largura do formulário */
+    margin: 0 auto; /* Centraliza o formulário */
+    padding: 25px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.contact-container h1 { /* Ajuste se o h1 estiver dentro do contact-container no seu original */
+    text-align: center;
+    color: #000;
+    margin-bottom: 30px;
+}
+
+/* Os estilos .form-group, input[type="text"], textarea, etc., já devem estar no seu CSS base. */
+/* Apenas para garantir que o select também tenha estilo */
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+    background-color: #fff; /* Fundo branco para o select */
+    appearance: none; /* Remove a seta padrão do select */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000%22%20d%3D%22M287%2C114.1L159.2%2C241.9c-3.6%2C3.6-8.2%2C5.4-12.8%2C5.4s-9.2-1.8-12.8-5.4L5.4%2C114.1c-7.2-7.2-7.2-18.9%2C0-26.1c7.2-7.2%2C18.9-7.2%2C26.1%2C0l127.3%2C127.3l127.3-127.3c7.2-7.2%2C18.9-7.2%2C26.1%2C0C294.2%2C95.2%2C294.2%2C106.9%2C287%2C114.1z%22%2F%3E%3C%2Fsvg%3E'); /* Adiciona uma seta personalizada */
+    background-repeat: no-repeat;
+    background-position: right 12px top 50%;
+    background-size: 12px auto;
+}
+
+.btn-send {
+    background-color: #ffcc66; /* Azul */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    width: 100%; /* Ocupa a largura total */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-send:hover {
+    background-color: #ff8c00;
+}
+
+.success-message {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
 
 /* Ajustes para responsividade dos filtros */
 @media (max-width: 768px) {

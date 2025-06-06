@@ -1,12 +1,12 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: "Quicksand", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background-color: #f0f0f0; /* Cor de fallback caso a imagem não carregue */
-    color:#333;
+    color:#000000;
     overflow: hidden; /* Evita barras de rolagem */
 }
 
@@ -45,7 +45,7 @@ body {
 }
 
 h2 {
-    color: #333;
+    color: #000000;
     margin-bottom: 30px;
     font-size: 24px;
 }
@@ -60,18 +60,24 @@ h2 {
     border: 1px solid #ddd;
     border-radius: 8px;
     font-size: 16px;
-    color: #333;
+    color: #000000;
     background-color: #fffaf0; /* Cor similar ao campo da imagem */
     box-sizing: border-box; /* Garante que padding não aumente a largura total */
 }
 
+.input-group input:focus{
+    border-color: #ffcc66;
+    box-shadow: 0 0 0 3px rgba(255, 204, 102, 0.2);
+    outline: none;
+}
+
 .input-group input::placeholder {
-    color: #a0a0a0;
+    color: #000000;
 }
 
 .btn-entrar {
     background-color: #ffcc66; /* Cor do botão similar à imagem */
-    color: #333; /* Cor do texto no botão */
+    color: #000000; /* Cor do texto no botão */
     padding: 15px 30px;
     border: none;
     border-radius: 8px;
@@ -79,7 +85,7 @@ h2 {
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 100%;
+    width: 95%;
     margin-top: 10px;
 }
 
@@ -90,12 +96,13 @@ h2 {
 .forgot-password {
     display: block;
     margin-top: 20px;
-    color: #666;
+    color: #000;
     text-decoration: none;
     font-size: 14px;
 }
 
 .forgot-password:hover {
+    color: #ffbb33;
     text-decoration: underline;
 }
 .error-message {

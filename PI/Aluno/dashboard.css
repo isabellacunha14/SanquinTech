@@ -23,15 +23,17 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 15px 40px;
-    background-color:transparent;
+    padding: 10px 50px;
+    background-color:#ffffffcc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     position: relative;
     top: 0;
     z-index: 1;
 }
 
 .navbar .logo {
-    margin-right: 80px;
+    margin-right: 75px;
 }
 
 .navbar .logo img {
@@ -47,21 +49,21 @@ body {
 }
 
 .nav-links li {
-    margin-left: 80px;
+    margin-left: 85px;
     position: relative;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #333;
+    color: #000000;
     font-weight: bold;
-    font-size: 1.4em;
+    font-size: 1.2em;
     padding: 5px 0;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: whitesmoke;
+    color: #ffbb33;
 }
 
 /* Destaque do item ativo na navbar */
@@ -75,9 +77,9 @@ body {
     bottom: -6px; /* posição para o destaque */
     left: 50%;
     transform: translateX(-50%);
-    width: calc(100% + 45px); /*largura do destaque */
+    width: calc(100% + 35px); /*largura do destaque */
     height: 35px; /* Altura do destaque */
-    background-color: rgba(255, 255, 255, 0.6); /* Cor do destaque */
+    background-color: #ffcc66; /* Cor do destaque */
     border-radius: 10px;
     z-index: -1; /* Para ficar atrás do texto */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
@@ -97,7 +99,7 @@ body {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 30px 40px;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
 .welcome-card.centered-card {
@@ -105,19 +107,19 @@ body {
     margin-left: auto;   /* Remove a margem esquerda fixa */
     margin-right: auto;  /* Remove a margem direita fixa */
     text-align: center; /* Centraliza o texto interno */
-    max-width: 1130px;
-    width: 90%;
+    max-width: 1125px;
+    width: 100%;
 }
 
 .welcome-card h1 {
-    color: #333;
+    color: #000000;
     margin-bottom: 10px;
     font-size: 2em;
 }
 
 .welcome-card p {
     color: #000000;
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 
 /* Estilos do Carrossel */
@@ -128,7 +130,7 @@ body {
     height: 400px; /* Altura fixa do carrossel */
     overflow: hidden;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     margin-top: 30px; /* Espaço entre o welcome card e o carrossel */
     margin-bottom: 30px; /* Espaço entre o carrossel e o grid abaixo */
     background-color: rgba(255, 255, 255, 0.9); /* Fundo para quando não há imagem cobrindo */
@@ -169,19 +171,20 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    background-color: #ffcc66;
+    color: #ffffffcc;
     border: none;
     padding: 10px 15px;
     cursor: pointer;
     font-size: 1.5em;
     z-index: 1; /* Garante que os botões fiquem acima dos slides */
     border-radius: 5px;
-    opacity: 0.7;
+    opacity: 0.75;
     transition: opacity 0.3s ease;
 }
 
 .carousel-button:hover {
+    background-color: #ffbb33;
     opacity: 1;
 }
 
@@ -213,7 +216,7 @@ body {
 }
 
 .indicator.active-indicator {
-    background-color: #ffcc66; /* Cor do indicador ativo */
+    background-color: #ffbb33; /* Cor do indicador ativo */
     width: 12px; /* Destaque leve */
     height: 12px;
 }
@@ -231,7 +234,7 @@ body {
 .notice-board-container {
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     padding: 25px;
     display: flex;
     flex-direction: column;
@@ -243,8 +246,8 @@ body {
     display: flex;
     font-size: small;
     align-items: center;
-    margin-bottom: 20px;
-    color: #333;
+    margin-bottom: 25px;
+    color: #000000;
 }
 
 .notice-board-header .fa-bell {
@@ -262,12 +265,13 @@ body {
 .notice-board-content {
     flex-grow: 1;
     overflow-y: auto; /* Barra de rolagem vertical */
-    max-height: 400px; /* Altura máxima para ativar a rolagem */
+    max-height: 420px; /* Altura máxima para ativar a rolagem */
     padding-right: 10px; /* Espaço para a barra de rolagem não sobrepor o texto */
 }
 
 .notice-item {
-    background-color: #f8f8f8;
+    background-color: #ffffffcc;
+    box-shadow: 0 2px 4px  #ffcc66;
     border-left: 5px solid #ffcc66; /* Linha amarela lateral */
     padding: 15px;
     margin-bottom: 15px;
@@ -280,22 +284,22 @@ body {
 .notice-item h4 {
     margin-top: 0;
     margin-bottom: 5px;
-    color: #333;
-    font-size: 1.1em;
+    color: #000000;
+    font-size: 1em;
 }
 
 .notice-item p {
     margin: 0 0 5px 0;
-    color: #666;
-    font-size: 0.95em;
+    color: #000000;
+    font-size: 0.9em;
 }
 
 .notice-item .notice-date, .notice-item .notice-time {
     position: absolute;
     top: 15px;
     right: 15px;
-    font-size: 0.85em;
-    color: #888;
+    font-size: 0.8em;
+    color: #000000;
 }
 
 .notice-item .notice-time {
@@ -305,7 +309,7 @@ body {
 .notice-item .notice-text {
     font-size: 0.9em;
     line-height: 1.4;
-    color: #444;
+    color: #000000;
     word-wrap:break-word;
     white-space: normal;
     overflow-wrap: break-word;
@@ -313,7 +317,7 @@ body {
 
 /* Estilização da barra de rolagem para navegadores WebKit */
 .notice-board-content::-webkit-scrollbar {
-    width: 8px;
+    width: 9px;
 }
 
 .notice-board-content::-webkit-scrollbar-track {
@@ -322,12 +326,12 @@ body {
 }
 
 .notice-board-content::-webkit-scrollbar-thumb {
-    background: #888;
+    background: #ffcc66;
     border-radius: 10px;
 }
 
 .notice-board-content::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: #ffbb33;
 }
 
 
@@ -335,7 +339,7 @@ body {
 .calendar-container {
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     padding: 25px;
     display: flex;
     flex-direction: column;
@@ -349,7 +353,7 @@ body {
     margin-bottom: 10px;
     text-align: center;
     font-weight: bold;
-    color: #333;
+    color: #000;
     border-bottom: 1px solid #eee;
     padding-bottom: 10px;
 }
@@ -377,7 +381,7 @@ body {
     justify-content: flex-end;
     padding-right: 10px;
     font-size: 0.9em;
-    color: #777;
+    color: #000000;
     border-bottom: 1px solid #eee;
     box-sizing: border-box; /* Garante que padding não aumente a altura */
     background-color: #fff;
@@ -402,7 +406,7 @@ body {
     /* REMOVA height: 60px; */
     /* height: 60px; <--- REMOVA ESTA LINHA */
     font-size: 0.85em; /* Ajuste o tamanho da fonte para caber mais texto */
-    color: #333;
+    color: #000000;
     overflow-wrap: break-word; /* Garante quebras de palavra */
     word-wrap: break-word;     /* Compatibilidade */
     white-space: normal;       /* Permite múltiplas linhas */
@@ -410,7 +414,7 @@ body {
 }
 
 .event-slot:hover {
-    background-color: #f0f0f0; /* Feedback visual ao passar o mouse */
+    background-color: #ffcc66; /* Feedback visual ao passar o mouse */
 }
 
 .event-slot.event { /* Estilo para eventos marcados */
@@ -441,7 +445,7 @@ body {
 
 /* Estilização da barra de rolagem do calendário para navegadores WebKit */
 .calendar-body::-webkit-scrollbar {
-    width: 8px;
+    width: 9px;
 }
 
 .calendar-body::-webkit-scrollbar-track {
@@ -450,12 +454,12 @@ body {
 }
 
 .calendar-body::-webkit-scrollbar-thumb {
-    background: #888;
+    background: #ffcc66;
     border-radius: 10px;
 }
 
 .calendar-body::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background:#ffbb33;
 }
 
 
@@ -472,7 +476,7 @@ body {
 
 .contact-info p {
     margin: 0;
-    color: #555;
+    color: #000000;
     font-size: 0.9em;
 }
 
@@ -483,19 +487,19 @@ body {
 
 .social-media p {
     margin: 0 15px 0 0;
-    color: #555;
+    color: #000000;
     font-size: 0.9em;
 }
 
 .social-media a {
-    color: #333;
+    color: #000000;
     font-size: 1.5em;
     margin-left: 10px;
     transition: color 0.3s ease;
 }
 
 .social-media a:hover {
-    color: #007bff; /* Cor ao passar o mouse nos ícones */
+    color: #ffbb33; /* Cor ao passar o mouse nos ícones */
 }
 
 /* Estilos para as novas páginas */
@@ -508,7 +512,7 @@ body {
     margin: 30px auto; /* Centraliza */
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     padding: 30px;
 }
 
@@ -550,7 +554,7 @@ body {
 }
 
 .profile-academic-info h3 {
-    color: #333;
+    color: #000000;
     margin-top: 0;
     margin-bottom: 20px;
     font-size: 1.4em;
@@ -560,12 +564,12 @@ body {
 .profile-academic-info p {
     margin-bottom: 10px;
     font-size: 1.05em;
-    color: #555;
+    color: #000000;
     line-height: 1.5;
 }
 
 .profile-academic-info strong {
-    color: #333;
+    color: #000000;
 }
 
 /* Coluna de Informações Pessoais (Direita) - Formulário */
@@ -574,7 +578,7 @@ body {
 }
 
 .personal-info-column h3 {
-    color: #333;
+    color: #000000;
     margin-top: 0;
     margin-bottom: 25px;
     font-size: 1.4em;
@@ -595,7 +599,7 @@ body {
     display: block; /* Cada rótulo em sua própria linha */
     margin-bottom: 8px;
     font-weight: bold;
-    color: #444;
+    color: #000000;
     font-size: 0.95em;
 }
 
@@ -608,7 +612,7 @@ body {
     border: 1px solid #ddd;
     border-radius: 8px;
     font-size: 1em;
-    color: #333;
+    color: #000000;
     background-color: #f9f9f9; /* Um leve fundo para os inputs */
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -633,7 +637,7 @@ body {
 
 .btn-save {
     background-color: #ffcc66;
-    color: #333;
+    color: #000000;
     padding: 12px 25px;
     border: none;
     border-radius: 8px;
@@ -651,7 +655,7 @@ body {
 /* Estilos para o botão Editar Perfil */
 .btn-edit {
     background-color: #ffcc66; /* Cor azul para "Editar" */
-    color: #333;
+    color: #000000;
     padding: 12px 25px;
     border: none;
     border-radius: 8px;
@@ -689,7 +693,7 @@ body {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     width: 90%;
     max-width: 800px; /* Largura padrão para as cards de conteúdo */
     margin: 30px auto; /* Centraliza e adiciona margem */
@@ -699,7 +703,7 @@ body {
 .frequency-card h2,
 .grades-card h2,
 .classes-card h2 {
-    color: #333;
+    color: #000000;
     margin-bottom: 25px;
     font-size: 2em;
 }
@@ -717,13 +721,13 @@ table th, table td {
     border: 1px solid #ddd;
     text-align: left;
     font-size: 1em;
-    color: #444;
+    color: #000000;
 }
 
 table th {
     background-color: #f2f2f2;
     font-weight: bold;
-    color: #333;
+    color: #000000;
 }
 
 table tbody tr:nth-child(even) {
@@ -731,7 +735,7 @@ table tbody tr:nth-child(even) {
 }
 
 table tbody tr:hover {
-    background-color: #f1f1f1;
+    background-color: #ffbb33;
 }
 
 /* Estilos de Aulas */
@@ -754,7 +758,7 @@ table tbody tr:hover {
 }
 
 .class-item h3 {
-    color: #007bff; /* Ou uma cor que combine com a Sanquim */
+    color: #ffbb33; /* Ou uma cor que combine com a Sanquim */
     margin-top: 0;
     margin-bottom: 10px;
     font-size: 1.3em;
@@ -762,14 +766,14 @@ table tbody tr:hover {
 
 .class-item p {
     font-size: 0.95em;
-    color: #666;
+    color: #000000;
     margin-bottom: 8px;
 }
 
 .btn-class-details {
     display: inline-block;
     background-color: #ffcc66;
-    color: #333;
+    color: #000000;
     padding: 8px 15px;
     border-radius: 5px;
     text-decoration: none;
