@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Colaborador - Portal do Coordenador Sanquim Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./coordenador-dashboard.css">
+    <link rel="stylesheet" href="./coordenador-gestao.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <div class="background-container">
+        <header class="navbar">
+            <div class="logo">
+                <img src="../Imagens/logosanquim.png" alt="Sanquim Tech Logo">
+            </div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="coordenador-dashboard.html" class="nav-item" data-page="coordenador-dashboard">Início</a></li>
+                    <li><a href="coordenador-gestao.html" class="nav-item" data-page="coordenador-gestao">Gestão</a></li>
+                    <li><a href="coordenador-relatorio.html" class="nav-item" data-page="coordenador-relatorios">Relatórios</a></li>
+                    <li><a href="coordenador-avisos.html" class="nav-item" data-page="coordenador-avisos">Avisos</a></li>
+                    <li><a href="../Login/login.html" class="nav-item" data-page="sair">Sair</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="content-area">
+            <div class="main-dashboard-card">
+                <div class="page-header">
+                    <h2><i class="fas fa-cogs"></i> Gerenciamento de Colaboradores</h2>
+                    <p>Utilize as opções abaixo para cadastrar ou consultar informações de funcionários e professores.</p>
+                </div>
+
+                <div class="tab-buttons">
+                    <button class="tab-button active" onclick="showTab('cadastro')">
+                        <i class="fas fa-user-plus"></i> Cadastro
+                    </button>
+                    <button class="tab-button" onclick="showTab('consulta')">
+                        <i class="fas fa-search"></i> Consulta
+                    </button>
+                </div>
+
+                <div id="cadastro" class="tab-content active">
+                    <h3>Cadastro de Colaborador</h3>
+                    <p>Selecione o tipo de colaborador para preencher os dados.</p>
+                    <form action="#" method="POST">
+                        <div class="form-selection-container">
+                            <label for="funcao" id="label-seleciona-funcao">Selecione a Função:</label><br>
+                            <select id="funcao" name="funcao" required onchange="exibirFormularioFuncao()">
+                                <option value="">Selecione a função</option>
+                                <option value="professor">Professor</option>
+                                <option value="coordenador">Coordenador</option>
+                                <option value="secretario">Secretário(a)</option>
+                                <option value="outros_funcionarios">Outros Funcionários</option>
+                            </select>
+                        </div>
+
+                        <div id="form-comum" class="form-section">
+                            <h3>Dados Básicos</h3>
+                            <div>
+                                <label for="nome">Nome Completo:</label><br>
+                                <input type="text" id="nome" name="nome" required>
+                            </div>
+                            <br>
+                            <div>
+                                <label for="cpf">CPF:</label><br>
+                                <input type="text" id="cpf" name="cpf" placeholder="XXX.XXX.XXX-XX" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
+                            </div>
+                            <br>
+                            <div>
+                                <label for="endereco">Endereço:</label><br>
+                                <label for="logradouro">Logradouro:</label><br>
+                                <input type="text" id="logradouro" name="logradouro" placeholder="Rua,Avenida,Estrada" required>
+                            </div>
+                            <br>
+                             <div>
+                                <label for="numero">Número:</label><br>
+                                <input type="text" id="logradouro" name="logradouro" required>
+                            </div>
+                            <br>
+                            <div>
+                                <label for="complemento">Complemento:</label><br>
+                                <input type="text" id="complemento" name="complemento" placeholder="Apartamento, Bloco" >
+                            </div>
+                            <br>
+                             <div>
+                                <label for="bairro">Bairro:</label><br>
+                                <input type="text" id="bairro" name="Bairro" required>
+                            </div>
+                            <br>
+                             <div>
+                                <label for="cidade">Cidade</label><br>
+                                <input type="text" id="cidade" name="cidade" required>
+                            </div>
+                            <br>
+                            <div>
+                                <label for="estado">Estado:</label><br>
+                                <select id="estado" name="estado" required>
+                                    <option value="">Selecione o Estado</option>
+                                    <option value="AC">Acre</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="ES">Espírito Santo</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="PI">Piauí</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="RN">Rio Grande do Norte</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="SE">Sergipe</option>
+                                    <option value="TO">Tocantins</option>
+                                </select>
+                            </div>
+                            <br>
+                            <div>
+                                <label for="cep">CEP:</label><br>
+                                <input type="text" id="cep" name="cep" placeholder="XXXXX-XXX" pattern="\d{5}-?\d{3}" maxlength="9" required>
+                            </div>
+                            <br>
+                            <div>
+                                <label for="email">E-mail:</label><br>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <br>
+                            <div>
+                                <label for="telefone">Telefone:</label><br>
+                                <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" pattern="^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$" required>
+                            </div>
+                            <br>
+                            <br>
+                            
+                        </div>
+
+                        <div id="form-professor" class="form-section">
+                            <h3>Dados do Professor</h3>
+                            <label>Disciplinas que Leciona:</label><br>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="matematica" name="disciplinas[]" value="Matemática">
+                                <label for="matematica">Matemática</label>
+
+                                <input type="checkbox" id="portugues" name="disciplinas[]" value="Português">
+                                <label for="portugues">Português</label>
+
+                                <input type="checkbox" id="historia" name="disciplinas[]" value="História">
+                                <label for="historia">História</label>
+
+                                <input type="checkbox" id="geografia" name="disciplinas[]" value="Geografia">
+                                <label for="geografia">Geografia</label>
+
+                                <input type="checkbox" id="ciencias" name="disciplinas[]" value="Ciências">
+                                <label for="ciencias">Ciências</label>
+
+                                <input type="checkbox" id="artes" name="disciplinas[]" value="Artes">
+                                <label for="artes">Artes</label>
+                            </div>
+                            <br>
+                            <div>
+                                <label for="formacaoProfessor">Formação Acadêmica:</label><br>
+                                <input type="text" id="formacaoProfessor" name="formacaoProfessor" placeholder="Ex: Licenciatura em Pedagogia, Pós-graduação em Educação">
+                            </div>
+                            <br>
+                            <label>Período(s) em que dá Aula:</label><br>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="manha" name="periodos[]" value="Manhã">
+                                <label for="manha">Manhã</label>
+
+                                <input type="checkbox" id="tarde" name="periodos[]" value="Tarde">
+                                <label for="tarde">Tarde</label>
+
+                                <input type="checkbox" id="noite" name="periodos[]" value="Noite">
+                                <label for="noite">Noite</label>
+                            </div>
+                            <br>
+                        </div>
+
+                        <div id="form-coordenador" class="form-section">
+                            <h3>Dados do Coordenador</h3>
+                            <div>
+                                <label for="areaCoordenacao">Área de Coordenação:</label><br>
+                                <input type="text" id="areaCoordenacao" name="areaCoordenacao" placeholder="Ex: Ensino Fundamental, Ensino Médio">
+                            </div>
+                            <br>
+                            <div>
+                                <label for="experienciaCoordenador">Anos de Experiência na Coordenação:</label><br>
+                                <input type="number" id="experienciaCoordenador" name="experienciaCoordenador" min="0">
+                            </div>
+                            <br>
+                        </div>
+
+                        <div id="form-secretario" class="form-section">
+                            <h3>Dados do Secretário(a)</h3>
+                            <div>
+                                <label for="horarioAtendimento">Horário de Atendimento:</label><br>
+                                <input type="text" id="horarioAtendimento" name="horarioAtendimento" placeholder="Ex: 8h às 17h">
+                            </div>
+                            <br>
+                            <div>
+                                <label for="funcaoSecretaria">Função Específica na Secretaria:</label><br>
+                                <input type="text" id="funcaoSecretaria" name="funcaoSecretaria" placeholder="Ex: Matrículas, Documentação Escolar">
+                            </div>
+                            <br>
+                        </div>
+
+                        <div id="form-outros" class="form-section">
+                            <h3>Dados Adicionais (Outros Funcionários)</h3>
+                            <div>
+                                <label for="cargoOutros">Cargo:</label><br>
+                                <input type="text" id="cargoOutros" name="cargoOutros" placeholder="Ex: Inspetor de Alunos, Auxiliar de Limpeza">
+                            </div>
+                            <br>
+                            <div>
+                                <label for="setorOutros">Setor:</label><br>
+                                <input type="text" id="setorOutros" name="setorOutros" placeholder="Ex: Manutenção, Administrativo">
+                            </div>
+                            <br>
+                        </div>
+
+                        <div id="botao-cadastro-container">
+                            <input type="submit" value="Cadastrar Colaborador">
+                        </div>
+                    </form>
+                </div>
+
+                <div id="consulta" class="tab-content">
+                    <h3>Consulta de Colaboradores</h3>
+                    <div class="search-container">
+                        <h4>Buscar Colaborador</h4>
+                        <div class="search-form-group">
+                            <label for="collaboratorType">Tipo de Colaborador:</label>
+                            <select id="collaboratorType" name="collaboratorType">
+                                <option value="all">Todos</option>
+                                <option value="student">Aluno</option>
+                                <option value="employee">Funcionário</option>
+                                <option value="professor">Professor</option>
+                            </select>
+                        </div>
+                        <div class="search-form-group">
+                            <label for="searchType">Buscar por:</label>
+                            <select id="searchType" name="searchType">
+                                <option value="name">Nome</option>
+                                <option value="cpf">CPF</option>
+                                <option value="matricula">Matrícula</option>
+                                <option value="ra">RA</option>
+                                <option value="curso">Curso</option>
+                            </select>
+                        </div>
+                        <div class="search-form-group">
+                            <label for="searchTerm">Termo de Busca:</label>
+                            <input type="text" id="searchTerm" name="searchTerm" placeholder="Digite o termo de busca">
+                        </div>
+                        <div class="search-form-group" id="periodSearchGroup" style="display: none;">
+                            <label for="periodSearchTerm">Período:</label>
+                            <input type="text" id="periodSearchTerm" name="periodSearchTerm" placeholder="Ex: 3º Semestre">
+                        </div>
+                        <button type="button" id="searchBtn" class="btn-search">Buscar</button>
+                    </div>
+
+                    <div class="profile-dashboard" style="display: none;">
+                        <div class="profile-column academic-info-column">
+                            <div class="profile-avatar">
+                                <img src="../Imagens/avatar.png" alt="Avatar do Colaborador">
+                            </div>
+
+                            <div class="profile-academic-info" id="academicInfoStudent">
+                                <h3>Informações Acadêmicas (Aluno)</h3>
+                                <p><strong>Nome:</strong> </p>
+                                <p><strong>Matrícula:</strong> </p>
+                                <p><strong>RA:</strong> </p>
+                                <p><strong>Curso:</strong> </p>
+                                <p><strong>Período:</strong> </p>
+                            </div>
+
+                            <div class="profile-academic-info" id="academicInfoEmployee" style="display: none;">
+                                <h3>Informações Profissionais (Funcionário)</h3>
+                                <p><strong>Nome:</strong> </p>
+                                <p><strong>Matrícula:</strong> </p>
+                                <p><strong>Cargo:</strong> </p>
+                                <p><strong>Departamento:</strong> </p>
+                                <p><strong>Data de Contratação:</strong> </p>
+                            </div>
+
+                            <div class="profile-academic-info" id="academicInfoProfessor" style="display: none;">
+                                <h3>Informações Acadêmicas/Profissionais (Professor)</h3>
+                                <p><strong>Nome:</strong> </p>
+                                <p><strong>Matrícula:</strong> </p>
+                                <p><strong>Titulação:</strong> </p>
+                                <p><strong>Área de Especialização:</strong> </p>
+                                <p><strong>Disciplinas Lecionadas:</strong> </p>
+                            </div>
+                        </div>
+
+                        <div class="profile-column personal-info-column">
+                            <h3>Informações Pessoais</h3>
+                            <form id="personalInfoForm" class="personal-info-form">
+                                <div class="form-group">
+                                    <label for="dob">Data de Nascimento:</label>
+                                    <input type="date" id="dob" name="dob" value="" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cpf">CPF:</label>
+                                    <input type="text" id="cpf" name="cpf" value="" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="rg">RG:</label>
+                                    <input type="text" id="rg" name="rg" value="" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="address">Endereço:</label>
+                                    <input type="text" id="address" name="address" value="" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="district">Bairro:</label>
+                                    <input type="text" id="district" name="district" value="" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="city">Cidade:</label>
+                                    <input type="text" id="city" name="city" value="" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Telefone:</label>
+                                    <input type="tel" id="phone" name="phone" value="" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">E-mail:</label>
+                                    <input type="email" id="email" name="email" value="" readonly>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="button" id="editProfileBtn" class="btn-edit">Editar Perfil</button>
+                                    <button type="submit" id="saveProfileBtn" class="btn-save" disabled>Salvar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="contact-info">
+                <p>Praça Duque de Caxias, 169 - Centro - Mogi Mirim</p>
+            </div>
+            <div class="social-media">
+                <p>Nos siga nas redes sociais.</p>
+                <a href="https://web.facebook.com/sanquim/?_rdc=1&_rdr#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/colegiosanquim/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UCc1HL8KqpsJat7hDp90mnag" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="./coordenador-gestao.js"></script>
+</body>
+</html>

@@ -1,0 +1,531 @@
+/* css/coordenador-gestao.css ou seu arquivo principal de estilos para esta página */
+
+/* Estilos Globais (Verifique se já tem isso em um arquivo base) */
+body {
+    font-family: 'Quicksand', sans-serif; /* Usando a fonte do seu HTML */
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+
+/* Área de Conteúdo Principal (Centraliza o container) */
+.content-area {
+    padding: 20px; /* Adicione um padding geral aqui para não colar nas bordas da tela */
+    max-width: 100%; /* Garante que ocupe a largura total, mas o container dentro será limitado */
+    margin: 0 auto; /* Centraliza a própria content-area se ela tiver um max-width */
+    box-sizing: border-box;
+}
+
+/* Card principal que engloba todo o conteúdo da dashboard (o fundo branco) */
+.main-dashboard-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 20px auto; /* Centraliza o card principal */
+    width: 95%; /* Ocupa a maior parte da largura da content-area */
+    max-width: 1200px; /* Limite máximo para o card principal */
+    box-sizing: border-box;
+}
+
+
+/* Estilos para o cabeçalho da página (Minhas Turmas e Gerenciamento) */
+.page-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.page-header h2 {
+    color: #333;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.page-header h2 i {
+    color: #ff8c00; /* Cor laranja do seu tema */
+    margin-right: 10px;
+}
+
+.page-header p {
+    color: #666;
+    font-size: 1em;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Estilos para abas/seções */
+.tab-buttons {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.tab-button {
+    background-color: #ffcc66; /* Laranja mais claro */
+    color: #333; /* Texto escuro */
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px; /* Borda mais arredondada */
+    cursor: pointer;
+    font-size: 1.1em;
+    margin: 0 10px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    font-weight: 600; /* Texto mais forte */
+}
+.tab-button:hover {
+    background-color: #ff8c00; /* Laranja principal no hover */
+    color: #ffffff; /* Texto branco no hover */
+    transform: translateY(-3px); /* Leve elevação no hover */
+}
+.tab-button.active {
+    background-color: #ff8c00; /* Cor para a aba ativa */
+    color: #ffffff; /* Texto branco */
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(255, 140, 0, 0.3); /* Sombra para destaque */
+    transform: translateY(-1px); /* Mantém um pouco de elevação */
+}
+.tab-content {
+    display: none;
+    padding: 20px 0;
+}
+.tab-content.active {
+    display: block;
+}
+
+/* Estilo para a seção de seleção de função (no cadastro) */
+.form-selection-container {
+    background-color: #f8f8f8; /* Fundo mais suave */
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    text-align: center; /* Centraliza o conteúdo */
+    box-shadow: inset 0 1px 5px rgba(0,0,0,0.05); /* Sombra interna sutil */
+}
+
+.form-selection-container label {
+    font-weight: bold;
+    color: #333;
+    display: block; /* Garante que o label fique em sua própria linha */
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.form-selection-container select {
+    width: 100%;
+    max-width: 400px; /* Limita a largura do select para melhor estética */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Borda mais arredondada */
+    font-size: 1em;
+    box-sizing: border-box;
+    appearance: none; /* Remove o estilo padrão do select */
+    background-color: #fff;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-6.5%200-12.3%203.2-15.8%208.1-3.5%204.9-3.5%2011.6%200%2016.5l128%20170.8c3.5%204.9%209.3%208.1%2015.8%208.1s12.3-3.2%2015.8-8.1l128-170.8c3.5-4.9%203.5-11.6%200-16.5z%22%2F%3E%3C%2Fsvg%3E'); /* Seta customizada */
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 1em;
+    margin: 0 auto; /* Centraliza o select se for block */
+}
+
+/* Estilos para os formulários de cadastro */
+.form-section {
+    display: none;
+    border-top: 1px solid #eee; /* Borda mais suave */
+    padding-top: 25px; /* Mais espaço no topo */
+    margin-top: 25px; /* Mais espaço acima */
+    text-align: left; /* Alinha o texto e labels à esquerda dentro do formulário */
+}
+
+.form-section h3 {
+    color: #ff8c00; /* Títulos dos sub-formulários em laranja */
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-align: center; /* Centraliza o título do sub-formulário */
+}
+
+.form-section > div { /* Espaçamento entre os grupos de input */
+    margin-bottom: 15px;
+}
+
+.form-section label {
+    display: block; /* Cada label em sua própria linha */
+    margin-bottom: 8px;
+    font-weight: 600; /* Labels mais fortes */
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Borda mais arredondada */
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #ff8c00; /* Borda laranja no foco */
+    box-shadow: 0 0 8px rgba(255, 140, 0, 0.3); /* Sombra laranja no foco */
+    outline: none; /* Remove outline padrão do navegador */
+}
+
+.checkbox-group label {
+    display: inline-block; /* Labels dos checkboxes na mesma linha */
+    margin-right: 15px;
+    font-weight: normal; /* Labels de checkbox sem bold, se não quiser */
+    color: #333;
+}
+.checkbox-group input[type="checkbox"] {
+    width: auto; /* Deixa o checkbox ter largura automática */
+    margin-right: 5px;
+    transform: scale(1.1); /* Deixa o checkbox um pouco maior */
+    vertical-align: middle; /* Alinha o checkbox com o texto */
+}
+
+input[type="submit"] {
+    background-color: #28a745; /* Verde para o botão de sucesso */
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700;
+    width: auto;
+    display: block;
+    margin: 30px auto 0 auto; /* Centraliza o botão */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+input[type="submit"]:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+#botao-cadastro-container {
+    display: none;
+    text-align: center;
+    margin-top: 30px; /* Espaço acima do botão */
+}
+
+/* ---------------------------------------------------- */
+/* Estilos para a Seção de Consulta - Aplicando a identidade visual */
+/* ---------------------------------------------------- */
+
+.search-container {
+    background-color: #f8f8f8;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: inset 0 1px 5px rgba(0,0,0,0.05);
+    text-align: center; /* Centraliza os elementos no container de busca */
+}
+
+.search-container h4 {
+    color: #ff8c00; /* Título em laranja */
+    font-size: 1.4em;
+    margin-bottom: 20px;
+}
+
+.search-form-group {
+    margin-bottom: 15px;
+    text-align: left; /* Alinha labels e inputs à esquerda dentro do grupo */
+    max-width: 400px; /* Limita a largura dos grupos de formulário */
+    margin-left: auto; /* Centraliza o grupo de formulário */
+    margin-right: auto;
+}
+
+.search-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+.search-form-group input[type="text"],
+.search-form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.search-form-group input[type="text"]:focus,
+.search-form-group select:focus {
+    border-color: #ff8c00;
+    box-shadow: 0 0 8px rgba(255, 140, 0, 0.3);
+    outline: none;
+}
+
+.btn-search {
+    background-color: #28a745; /* Botão de busca verde */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px; /* Espaço acima do botão */
+}
+
+.btn-search:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* Perfil do Colaborador (Resultado da Consulta) */
+.profile-dashboard {
+    display: flex; /* Usando flexbox para as colunas */
+    flex-wrap: wrap; /* Quebra para a próxima linha em telas menores */
+    gap: 30px; /* Espaço entre as colunas */
+    margin-top: 30px;
+    justify-content: center; /* Centraliza as colunas */
+}
+
+.profile-column {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    flex: 1; /* Permite que as colunas se estendam */
+    min-width: 300px; /* Largura mínima para cada coluna antes de quebrar */
+    box-sizing: border-box;
+    text-align: center; /* Centraliza o conteúdo dentro da coluna */
+}
+
+.profile-column h3 {
+    color: #ff8c00;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 20px auto; /* Centraliza o avatar */
+    border: 3px solid #ff8c00; /* Borda laranja no avatar */
+    box-shadow: 0 0 10px rgba(255, 140, 0, 0.3);
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-academic-info p,
+.personal-info-form .form-group p { /* Ajuste para parágrafos dentro de form-group se usar */
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 10px;
+    text-align: left; /* Alinha o texto das informações à esquerda */
+}
+
+.profile-academic-info p strong {
+    color: #333;
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+/* Formulário de informações pessoais (dentro da coluna) */
+.personal-info-form .form-group {
+    margin-bottom: 15px;
+    text-align: left; /* Alinha labels e inputs à esquerda */
+}
+
+.personal-info-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+.personal-info-form input[type="date"],
+.personal-info-form input[type="text"],
+.personal-info-form input[type="tel"],
+.personal-info-form input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box;
+    background-color: #f9f9f9; /* Levemente cinza para campos readonly */
+}
+
+.personal-info-form input[readonly] {
+    background-color: #e9e9e9; /* Cor de fundo para campos readonly */
+    cursor: not-allowed;
+}
+
+.form-actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaçamento entre os botões */
+}
+
+.btn-edit, .btn-save {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-edit {
+    background-color: #ff8c00; /* Laranja */
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #e07b00;
+    transform: translateY(-2px);
+}
+
+.btn-save {
+    background-color: #28a745; /* Verde */
+    color: white;
+}
+
+.btn-save:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.btn-save:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Footer (Já deve estar em coordenador-dashboard.css ou outro global) */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.footer .contact-info p {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.footer .social-media p {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.footer .social-media a {
+    color: white;
+    font-size: 1.2em;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer .social-media a:hover {
+    color: #ff8c00; /* Laranja da sua paleta */
+}
+
+
+/* Responsividade Geral */
+@media (max-width: 992px) {
+    .main-dashboard-card {
+        padding: 25px;
+        width: 98%; /* Ocupa mais largura em telas médias */
+    }
+    .profile-dashboard {
+        flex-direction: column; /* Colunas empilhadas em telas médias */
+        gap: 20px;
+    }
+    .profile-column {
+        min-width: unset; /* Remove o min-width para flexibilidade */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+    }
+    .navbar .nav-links ul {
+        flex-direction: column;
+        margin-top: 15px;
+    }
+    .navbar .nav-links li {
+        margin: 10px 0;
+    }
+    .page-header h2 {
+        font-size: 1.6em;
+    }
+    .page-header p {
+        font-size: 0.9em;
+    }
+    .tab-button {
+        padding: 10px 20px;
+        font-size: 1em;
+        margin: 5px;
+    }
+    .form-selection-container,
+    .search-container,
+    .profile-column {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-dashboard-card {
+        padding: 15px;
+        margin: 15px auto;
+    }
+    .page-header h2 {
+        font-size: 1.4em;
+    }
+    .tab-button {
+        display: block; /* Botões de aba em bloco em telas muito pequenas */
+        margin-bottom: 10px;
+    }
+    .form-section h3 {
+        font-size: 1.3em;
+    }
+    input[type="submit"],
+    .btn-search,
+    .btn-edit,
+    .btn-save {
+        width: 100%; /* Botões ocupam largura total */
+        padding: 12px;
+    }
+    .form-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

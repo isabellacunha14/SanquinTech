@@ -1,0 +1,156 @@
+/* css/novo-modulo-estilo.css */
+
+/* Remova o CSS básico do body e container se já estiverem definidos globalmente */
+/* Se não, mantenha ou mescle com seus estilos globais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Mantenha o fundo padrão claro */
+    margin: 0; /* Remova margens padrão do body para máximo controle */
+    padding: 0; /* Remova paddings padrão do body */
+    color: #333;
+}
+
+/* O elemento que envolve todo o conteúdo principal da página */
+.content-area { /* Sua tag <main> tem esta classe */
+    width: 100%; /* Ocupa 100% da largura disponível */
+    padding: 0; /* Garante que não haja padding que limite o container */
+    margin: 0 auto; /* Centraliza a área de conteúdo se houver um max-width aqui */
+    /* Se o seu background laranja na imagem de avisos vem de um elemento PARENT
+       do content-area, ele se manterá lá. Se não, podemos adicionar um fundo
+       laranja aqui ou no body. */
+}
+
+
+.container {
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 30px auto; /* Centraliza o container na área de conteúdo */
+    width: 90%; /* Define a largura como 90% da área de conteúdo pai */
+    max-width: 1400px; /* Define um limite máximo de largura para telas muito grandes */
+    min-width: 300px; /* Garante que não fique muito pequeno em telas minúsculas */
+    box-sizing: border-box; /* Garante que padding e border não adicionem largura total */
+}
+
+/* Estilo para os títulos das categorias */
+.category-title {
+    color: #333;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    font-weight: 700;
+}
+
+.category-title i {
+    color: #ff8c00;
+    margin-right: 10px;
+}
+
+/* Grid para os botões - similar ao classes-grid */
+.button-grid {
+    display: grid;
+    /* Ajustado minmax para botões serem um pouco maiores e mais flexíveis */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px; /* Espaçamento como nos cards */
+    padding: 0;
+    margin-bottom: 30px;
+    /* REMOVEMOS justify-content: center; AQUI! */
+    /* Ao invés de centralizar a grade, deixamos ela preencher o espaço disponível.
+       Os itens do grid se centralizam dentro de suas próprias células por padrão (se o conteúdo for menor que a célula)
+       ou podemos usar 'place-items: center;' no grid-button para isso. */
+}
+
+/* Estilos para cada botão de grid - similar ao class-card */
+.grid-button {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente o conteúdo do botão */
+    justify-content: center; /* Centraliza verticalmente o conteúdo do botão */
+    text-align: center;
+    text-decoration: none;
+    color: #555;
+    font-size: 1em;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    cursor: pointer;
+    border: 2px solid transparent;
+    font-weight: 600;
+}
+
+.grid-button:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: #ff8c00;
+    color: #333;
+}
+
+.grid-button i {
+    font-size: 2.8em;
+    margin-bottom: 15px;
+    color: #ff8c00;
+    transition: color 0.3s ease;
+}
+
+.grid-button:hover i {
+    color: #ff8c00;
+}
+
+.grid-button span {
+    display: block;
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* Responsividade para telas menores - adaptando do seu CSS existente */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 20px auto;
+        width: 95%; /* Ocupa mais em telas menores */
+    }
+    .button-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Ajuste para tablets */
+        gap: 20px;
+    }
+    .grid-button {
+        padding: 20px 10px;
+    }
+    .grid-button i {
+        font-size: 2.4em;
+        margin-bottom: 10px;
+    }
+    .category-title {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%; /* Permite que ocupe quase toda a largura em celulares */
+        padding: 15px;
+        margin: 15px auto;
+    }
+    .button-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas muito pequenas */
+        gap: 15px;
+    }
+    .grid-button {
+        padding: 15px;
+    }
+    .grid-button i {
+        font-size: 2em;
+        margin-bottom: 8px;
+    }
+    .category-title {
+        font-size: 1.3em;
+        margin-bottom: 10px;
+    }
+}
