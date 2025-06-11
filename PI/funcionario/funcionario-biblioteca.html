@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Virtual - Sanquim Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="funcionario-cadastroUsuario.css"> <link rel="stylesheet" href="funcionario-biblioteca.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="background-container">
+        <header class="navbar">
+            <div class="logo">
+                <img src="../Imagens/logosanquim.png" alt="Sanquim Tech Logo">
+            </div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="funcionario-dashboard.html" class="nav-item" data-page="funcionario-dashboard">Início</a></li>
+                    <li><a href="funcionario-cadastroUsuario.html" class="nav-item" data-page="cadastro-usuario">Cadastro de Usuário</a></li>
+                    <li><a href="funcionario-cadastroAcademico.html" class="nav-item" data-page="cadastro-academico">Cadastro Acadêmico</a></li>
+                    <li><a href="funcionario-biblioteca.html" class="nav-item active" data-page="biblioteca-virtual">Biblioteca Virtual</a></li>
+                    <li><a href="../Login/login.html" class="nav-item" data-page="sair">Sair</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="content-area">
+            <div class="main-card">
+                <h2 class="page-title"><i class="fas fa-book-open"></i> Biblioteca Virtual</h2>
+
+                <div class="form-container">
+                    <form id="cadastroMaterialForm">
+                        <div class="form-group">
+                            <label for="tituloMaterial">Título do Material:</label>
+                            <input type="text" id="tituloMaterial" name="tituloMaterial" placeholder="Ex: Artigo sobre IA" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tipoMaterial">Tipo de Material:</label>
+                            <select id="tipoMaterial" name="tipoMaterial" required>
+                                <option value="">Selecione o tipo...</option>
+                                <option value="arquivo">Arquivo (PDF, DOC, Imagem, etc.)</option>
+                                <option value="url">Link / URL (Vídeo, Site, Artigo Online)</option>
+                            </select>
+                        </div>
+
+                        <div id="camposTipoMaterial" class="campos-tipo-material">
+                            </div>
+
+                        <div class="form-group">
+                            <label for="descricaoMaterial">Descrição (opcional):</label>
+                            <textarea id="descricaoMaterial" name="descricaoMaterial" placeholder="Breve descrição do material"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit"><i class="fas fa-upload"></i> Adicionar Material</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="main-card registros-card">
+                <h2 class="page-title"><i class="fas fa-list-alt"></i> Materiais Cadastrados</h2>
+                <div id="materiaisCadastrados" class="registros-list">
+                    <p class="no-records-message">Nenhum material cadastrado ainda.</p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="contact-info">
+                <p>Praça Duque de Caxias, 169 - Centro - Mogi Mirim</p>
+            </div>
+            <div class="social-media">
+                <p>Nos siga nas redes sociais.</p>
+                <a href="https://web.facebook.com/sanquim/?_rdc=1&_rdr#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/colegiosanquim/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UCc1HL8KqpsJat7hDp90mnag" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </footer>
+    </div>
+    <div id="mainModal" class="modal"></div>
+
+    <script src="../Funcionario/funcionario-dashboard.js"></script>
+    <script src="funcionario-biblioteca.js"></script>
+</body>
+</html>

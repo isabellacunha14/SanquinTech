@@ -1,0 +1,165 @@
+/* Importa os estilos base do cadastro de usuário para manter a consistência */
+@import url("../CadastroUsuario/cadastro-usuario.css");
+
+/* Estilos específicos para a página de Cadastro Acadêmico */
+
+/* Ajustes para o título da página */
+.page-title .fas.fa-graduation-cap {
+    color: #4CAF50; /* Um verde vibrante para acadêmico */
+}
+.page-title .fas.fa-book-open {
+    color: #2196F3; /* Um azul para livros/cursos */
+}
+
+/* Ajustes para o botão de submit, se desejar uma cor diferente */
+.btn-submit {
+    background-color: #4CAF50; /* Verde para cadastrar */
+    color: white;
+}
+
+.btn-submit:hover {
+    background-color: #45a049;
+}
+
+/* Estilos específicos para os itens de curso na lista */
+.registro-item-curso {
+    background-color: #fefefe;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.registro-item-curso:hover {
+    background-color: #f9f9f9;
+    border-color: #d0d0d0;
+}
+
+.registro-item-curso h3 {
+    margin: 0;
+    color: #333;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.registro-item-curso h3 .fas.fa-book {
+    color: #4CAF50; /* Verde para o ícone do curso */
+}
+
+.registro-item-curso p {
+    margin: 0;
+    color: #555;
+    font-size: 0.95em;
+}
+
+/* Estilos para a seção de matérias dentro do modal de edição de curso */
+.materias-list-container {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed #eee;
+}
+
+.materias-list-container h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.materias-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 0; /* Remove padding padrão de ul */
+    list-style: none; /* Remove marcadores de lista */
+}
+
+.materia-item {
+    background-color: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95em;
+    color: #444;
+}
+
+.materia-item .materia-details {
+    flex-grow: 1;
+}
+
+.materia-item .materia-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.materia-item .materia-actions button {
+    padding: 5px 8px;
+    font-size: 0.75em;
+    background-color: #f44336; /* Vermelho para remover */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.materia-item .materia-actions button:hover {
+    background-color: #d32f2f;
+}
+
+/* Formulário para adicionar nova matéria no modal */
+.add-materia-form {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed #eee;
+}
+
+.add-materia-form .form-group {
+    margin-bottom: 10px;
+}
+
+.add-materia-form .btn-add-materia {
+    background-color: #2196F3; /* Azul para adicionar matéria */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.add-materia-form .btn-add-materia:hover {
+    background-color: #1976D2;
+}
+
+/* Ajustes responsivos, se necessário */
+@media (max-width: 768px) {
+    .registro-item-curso {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .registro-item-curso .registro-actions {
+        width: 100%;
+        justify-content: flex-start;
+        margin-top: 10px;
+    }
+}

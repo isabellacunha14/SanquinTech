@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Funcionário - Sanquim Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./funcionario-dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="background-container">
+        <header class="navbar">
+            <div class="logo">
+                <img src="../Imagens/logosanquim.png" alt="Sanquim Tech Logo">
+            </div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="funcionario-dashboard.html" class="nav-item active" data-page="funcionario-dashboard">Início</a></li>
+                    <li><a href="funcionario-cadastroUsuario.html" class="nav-item" data-page="cadastro-usuario">Cadastro de Usuário</a></li>
+                    <li><a href="funcionario-cadastroAcademico.html" class="nav-item" data-page="cadastro-academico">Cadastro Acadêmico</a></li>
+                    <li><a href="funcionario-biblioteca.html" class="nav-item" data-page="biblioteca">Biblioteca Virtual</a></li>
+                    <li><a href="../Login/login.html" class="nav-item" data-page="sair">Sair</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="content-area">
+            <div class="main-dashboard-card"> 
+                <div class="welcome-section">
+                    <h2>Olá, Funcionário(a) <span>[Nome do Funcionário]</span>.</h2>
+                    <p>Bem-vindo(a) ao Painel Administrativo SanquimTech.</p>
+                </div>
+                
+                <div class="dashboard-grid"> 
+                    <!-- Aplicando as classes específicas para o dimensionamento -->
+                    <div class="grid-item consulta-container">
+                        <h3><i class="fas fa-search"></i> Consulta Acadêmica</h3>
+                        <p class="description">Busque por informações de alunos e cursos vigentes.</p>
+                        <form class="consulta-form">
+                            <div class="form-group">
+                                <input type="text" id="searchInput" placeholder="Nome, matrícula, CPF ou curso...">
+                            </div>
+                            <button type="submit" class="btn-buscar"><i class="fas fa-check"></i> Buscar</button>
+                        </form>
+                    </div>
+
+                    <div class="grid-item actions-container">
+                        <h3><i class="fas fa-rocket"></i> Ações Rápidas</h3>
+                        <ul class="actions-list">
+                            <li><a href="funcionario-cadastroUsuario.html"><i class="fas fa-user-plus"></i> Cadastrar Novo Aluno</a></li>
+                            <li><a href="funcionario-cadastroUsuario.html"><i class="fas fa-chalkboard-teacher"></i> Cadastrar Novo Professor</a></li>
+                            <li><a href="funcionario-cadastroAcademico.html"><i class="fas fa-book-open"></i> Criar Novo Curso</a></li>
+                            <li><a href="#"><i class="fas fa-bullhorn"></i> Gerenciar Comunicados</a></li>
+                            <li><a href="#"><i class="fas fa-chart-bar"></i> Gerar Relatórios</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>     
+        </main>
+
+        <footer class="footer">
+            <div class="contact-info">
+                <p>Praça Duque de Caxias, 169 - Centro - Mogi Mirim</p>
+            </div>
+            <div class="social-media">
+                <p>Nos siga nas redes sociais.</p>
+                <a href="https://web.facebook.com/sanquim/?_rdc=1&_rdr#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/colegiosanquim/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UCc1HL8KqpsJat7hDp90mnag" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../Aluno/dashboard.js"></script>
+    <script src="./funcionario-dashboard.js"></script>
+</body>
+</html>

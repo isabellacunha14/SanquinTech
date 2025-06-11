@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Acadêmico - Sanquim Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="funcionario-cadastroUsuario.css"> <link rel="stylesheet" href="funcionario-cadastroAcademico.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="background-container">
+        <header class="navbar">
+            <div class="logo">
+                <img src="../Imagens/logosanquim.png" alt="Sanquim Tech Logo">
+            </div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="funcionario-dashboard.html" class="nav-item" data-page="funcionario-dashboard">Início</a></li>
+                    <li><a href="funcionario-cadastroUsuario.html" class="nav-item" data-page="cadastro-usuario">Cadastro de Usuário</a></li>
+                    <li><a href="funcionario-cadastroAcademico.html" class="nav-item active" data-page="cadastro-academico">Cadastro Acadêmico</a></li>
+                    <li><a href="funcionario-biblioteca.html" class="nav-item" data-page="biblioteca-virtual">Biblioteca Virtual</a></li>
+                    <li><a href="../Login/login.html" class="nav-item" data-page="sair">Sair</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="content-area">
+            <div class="main-card">
+                <h2 class="page-title"><i class="fas fa-graduation-cap"></i> Cadastro Acadêmico</h2>
+
+                <div class="form-container">
+                    <form id="cadastroAcademicoForm">
+                        <div class="form-group">
+                            <label for="tipoCadastro">O que deseja cadastrar?</label>
+                            <select id="tipoCadastro" name="tipoCadastro" required>
+                                <option value="">Selecione...</option>
+                                <option value="curso">Novo Curso</option>
+                                </select>
+                        </div>
+
+                        <div id="camposCadastro" class="campos-cadastro">
+                            </div>
+
+                        <button type="submit" class="btn-submit"><i class="fas fa-plus-circle"></i> Cadastrar Item Acadêmico</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="main-card registros-card">
+                <h2 class="page-title"><i class="fas fa-book-open"></i> Cursos Cadastrados</h2>
+                <div id="registrosCursos" class="registros-list">
+                    <p class="no-records-message">Nenhum curso cadastrado ainda.</p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="contact-info">
+                <p>Praça Duque de Caxias, 169 - Centro - Mogi Mirim</p>
+            </div>
+            <div class="social-media">
+                <p>Nos siga nas redes sociais.</p>
+                <a href="https://web.facebook.com/sanquim/?_rdc=1&_rdr#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/colegiosanquim/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UCc1HL8KqpsJat7hDp90mnag" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </footer>
+    </div>
+    <div id="mainModal" class="modal"></div>
+
+    <script src="../Funcionario/funcionario-dashboard.js"></script>
+    <script src="funcionario-cadastroAcademico.js"></script>
+</body>
+</html>
