@@ -16,7 +16,7 @@ body {
 .content-area {
     padding: 20px; /* Adicione um padding geral aqui para não colar nas bordas da tela */
     max-width: 100%; /* Garante que ocupe a largura total, mas o container dentro será limitado */
-    margin: 0 auto; /* Centraliza a própria content-area se ela tiver um max-width */
+    margin: 0 ; /* Centraliza a própria content-area se ela tiver um max-width */
     box-sizing: border-box;
 }
 
@@ -87,7 +87,214 @@ body {
     color: #ffffff; /* Texto branco */
     font-weight: bold;
     box-shadow: 0 4px 10px rgba(255, 140, 0, 0.3); /* Sombra para destaque */
-    transform: translateY(-1px); /* Mantém um pouco de elevação */
+    transform: translateY(-1px); /* Mantém um pouco de elevação *//* Importa os estilos base do dashboard do aluno */
+@import url("../Aluno/dashboard.css");
+
+/* Garante que o container principal não crie uma barra de rolagem horizontal */
+.background-container {
+    overflow-x: hidden; 
+}
+
+/* Estilos para o cabeçalho (navbar) */
+.navbar {
+    background-color: #ffffffcc; 
+    padding: 15px 20px; /* Adiciona um pouco de espaço interno */
+    display: flex;
+    justify-content: flex-start; /* Espaça a logo e os links */
+    align-items: center;
+    border-radius: 8px 8px 0 0; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); 
+    position: relative; 
+    z-index: 1; 
+}
+
+/* Estilos para o logo dentro da navbar */
+.logo img {
+    height: 40px; /* Ajuste a altura do logo conforme necessário */
+}
+
+/* Estilos para a lista de links de navegação */
+.nav-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links li:first-child {
+    margin-left: 0;
+}
+
+.nav-links .nav-item {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links .nav-item:hover,
+.nav-links .nav-item.active {
+    /*background-color: #ffbb33;*/
+    color: #000;
+}
+
+/* Estilos para a área de conteúdo principal */
+.content-area {
+    display: flex;
+    justify-content: center; /* Centraliza o card horizontalmente */
+    padding: 30px; /* Adiciona mais espaçamento ao redor do card */
+}
+
+/* Estilos para o card principal do dashboard */
+.main-dashboard-card {
+    background-color: rgba(255, 255, 255, 0.9); 
+    border-radius: 15px; /* Bordas arredondadas */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra suave */
+    padding: 40px; /* Aumentei o padding interno para dar mais espaço */
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+    width: 90%; /* Aumenta a largura relativa */
+    max-width: 1200px; /* Define uma largura máxima opcional */
+}
+
+/* Estiliza a seção de boas-vindas para funcionar como um cabeçalho DENTRO do card principal */
+.main-dashboard-card .welcome-section {
+    padding-bottom: 25px; 
+    margin-bottom: 25px; 
+    border-bottom: 1px solid #f0f0f0; /* Linha de separação um pouco mais suave */
+    text-align: center; 
+}
+
+/* Usamos FLEXBOX para o grid, permitindo larguras proporcionais */
+.dashboard-grid {
+    display: flex; 
+    gap: 25px;
+    align-items: stretch; 
+    width: 100%;
+}
+
+/* --- ALTERAÇÃO PRINCIPAL: O .grid-item não é mais um card individual --- */
+.grid-item {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Define as proporções das colunas (ex: 40% / 60%) */
+.consulta-container {
+    flex: 1; 
+}
+
+.actions-container {
+    flex: 1.5; 
+}
+
+
+/* Estilos dos componentes internos (mantidos e revisados) */
+.grid-item h3 {
+    color: #000;
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.grid-item h3 .fas {
+    color: #ffbb33;
+}
+
+.grid-item .description {
+    color: #666;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 0.9em;
+}
+
+/* Card de Consulta */
+.consulta-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.consulta-form input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.consulta-form .btn-buscar {
+    background-color: #ffcc66;
+    color: #000;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.consulta-form .btn-buscar:hover {
+    background-color: #ffbb33;
+}
+
+/* Card de Ações Rápidas */
+.actions-container .actions-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.actions-container .actions-list a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.actions-container .actions-list a:hover {
+    background-color: #fff8e1;
+    color: #000;
+}
+
+.actions-container .actions-list .fas {
+    color: #ffbb33;
+    width: 20px;
+    text-align: center;
+}
+
+/* Ajuste de Responsividade */
+@media (max-width: 900px) {
+    .dashboard-grid {
+        flex-direction: column; 
+    }
+}
 }
 .tab-content {
     display: none;
@@ -103,7 +310,7 @@ body {
     border: 1px solid #eee;
     border-radius: 10px;
     padding: 25px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     text-align: center; /* Centraliza o conteúdo */
     box-shadow: inset 0 1px 5px rgba(0,0,0,0.05); /* Sombra interna sutil */
 }
@@ -137,29 +344,30 @@ body {
 .form-section {
     display: none;
     border-top: 1px solid #eee; /* Borda mais suave */
-    padding-top: 25px; /* Mais espaço no topo */
-    margin-top: 25px; /* Mais espaço acima */
+    padding-top: 10px; 
+    margin-top: 10px; 
     text-align: left; /* Alinha o texto e labels à esquerda dentro do formulário */
 }
 
 .form-section h3 {
     color: #ff8c00; /* Títulos dos sub-formulários em laranja */
     font-size: 1.5em;
-    margin-bottom: 20px;
+    margin-bottom: 5px; 
     text-align: center; /* Centraliza o título do sub-formulário */
 }
 
 .form-section > div { /* Espaçamento entre os grupos de input */
-    margin-bottom: 15px;
+    margin-bottom: 5px; 
 }
 
 .form-section label {
     display: block; /* Cada label em sua própria linha */
-    margin-bottom: 8px;
+    margin-bottom: 3px; 
     font-weight: 600; /* Labels mais fortes */
     color: #555;
 }
 
+/* Os estilos para input[type="text"], etc., devem estar ok, mas verifique se não há padding excessivo neles */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
