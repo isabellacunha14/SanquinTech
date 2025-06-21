@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mapeamento de usuários e suas páginas de destino
     const users = {
         'aluno@sanquim.com': { password: 'aluno123', redirect: '../Aluno/dashboard.html', role: 'aluno' },
-        'professor@sanquim.com': { password: 'prof123', redirect: '../Professor/portal_professor.html', role: 'professor' }, // NOVO: Redireciona para portal_professor.html
-        'admin@sanquim.com': { password: 'admin123', redirect: 'portal_admin.html', role: 'admin' } // Futuro: Portal do Administrador
+        'professor@sanquim.com': { password: 'prof123', redirect: '../Professor/professor-dashboard.html', role: 'professor' }, // NOVO: Redireciona para portal_professor.html
+        'admin@sanquim.com': { password: 'admin123', redirect: 'funcionario-dashboard.html', role: 'admin' } // Futuro: Portal do Administrador
     };
 
     // --- Lógica de Login (Executada apenas na página de login) ---
@@ -29,6 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 window.location.href = users[email].redirect; // Redireciona para a página do perfil
             } else {
+                document.getElementById('email').value = '';
+                document.getElementById('password').value = '';
                 errorMessage.textContent = 'E-mail ou senha inválidos.';
                 errorMessage.style.display = 'block';
             }

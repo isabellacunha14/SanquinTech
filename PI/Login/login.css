@@ -110,8 +110,6 @@ h2 {
     margin-top: 15px;
     font-size: 0.9em;
     height: 1.2em; /* Para manter o espaço mesmo quando vazio */
-    visibility: hidden;
-    opacity: 0;
     transition: opacity 0.3s ease;
 }
 

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard do Professor - Sanquim Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Aluno/dashboard.css">
+    <link rel="stylesheet" href="./professor-perfil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="background-container">
+        <header class="navbar">
+            <div class="logo">
+                <img src="../Imagens/logosanquim.png" alt="Sanquim Tech Logo">
+            </div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="professor-dashboard.html" class="nav-item" data-page="professor-dashboard">Início</a></li>
+                    <li><a href="professor-perfil.html" class="nav-item" data-page="professor-perfil">Perfil</a></li>
+                    <li><a href="minhas-turmas.html" class="nav-item" data-page="minhas-turmas">Minhas Turmas</a></li>
+                    <li><a href="professor-avisos.html" class="nav-item" data-page="professor-avisos">Avisos</a></li>
+                    <li><a href="professor-contato.html" class="nav-item" data-page="professor-contato">Contato</a></li>
+                    <li><a href="../Login/login.html" class="nav-item" data-page="sair">Sair</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="content-area">
+      <div class="profile-dashboard">
+        <!-- Coluna Esquerda: Avatar + Dados Fixos -->
+        <div class="profile-column academic-info-column">
+          <div class="profile-avatar">
+            <img src="../Imagens/avatar.png" alt="Foto do Professor">
+          </div>
+          <div class="profile-academic-info">
+            <h3><i class="fas fa-chalkboard-teacher"></i> Dados Básicos</h3>
+            <p><strong>Nome:</strong> Carlos Eduardo</p>
+            <p><strong>Matrícula:</strong> P123456</p>
+            <p><strong>Disciplina:</strong> Matemática</p>
+            <p><strong>Email:</strong> carlos.eduardo@sanquimtech.com</p>
+          </div>
+        </div>
+
+        <!-- Coluna Direita: Banco de Talentos -->
+        <div class="profile-column talent-info-column">
+          <h3><i class="fas fa-user-graduate"></i> Banco de Talentos</h3>
+          <div class="talent-buttons">
+            <button class="btn-modal" data-modal="modalGraduacao"><i class="fas fa-university"></i> Adicionar Graduação</button>
+            <button class="btn-modal" data-modal="modalCurso"><i class="fas fa-book-open"></i> Adicionar Curso</button>
+            <button class="btn-modal" data-modal="modalPortifolio"><i class="fas fa-folder-open"></i> Adicionar Portfólio</button>
+            <button class="btn-modal" data-modal="modalVoluntario"><i class="fas fa-hands-helping"></i> Adicionar Trabalho Voluntário</button>
+          </div>
+
+          <div class="password-section">
+            <button class="btn-password" id="changePasswordBtn"><i class="fas fa-key"></i> Alterar Senha</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Base - Graduação -->
+<div id="modalGraduacao" class="modal">
+  <div class="modal-content">
+    <span class="close-button" data-close="modalGraduacao">&times;</span>
+    <h4><i class="fas fa-university"></i> Adicionar Graduação</h4>
+    <form class="modal-form">
+      <label>Curso:</label>
+      <input type="text" required>
+      <label>Instituição:</label>
+      <input type="text" required>
+      <label>Ano de Conclusão:</label>
+      <input type="number" min="1900" max="2100" required>
+      <button type="submit" class="btn-save">Salvar</button>
+    </form>
+  </div>
+</div>
+
+<!-- Modal - Curso Complementar -->
+<div id="modalCurso" class="modal">
+  <div class="modal-content">
+    <span class="close-button" data-close="modalCurso">&times;</span>
+    <h4><i class="fas fa-book-open"></i> Adicionar Curso</h4>
+    <form class="modal-form">
+      <label>Nome do Curso:</label>
+      <input type="text" required>
+      <label>Instituição:</label>
+      <input type="text" required>
+      <label>Carga Horária:</label>
+      <input type="text" required>
+      <button type="submit" class="btn-save">Salvar</button>
+    </form>
+  </div>
+</div>
+
+<!-- Modal - Portfólio -->
+<div id="modalPortifolio" class="modal">
+  <div class="modal-content">
+    <span class="close-button" data-close="modalPortifolio">&times;</span>
+    <h4><i class="fas fa-folder-open"></i> Adicionar Portfólio</h4>
+    <form class="modal-form">
+      <label>Descrição:</label>
+      <textarea required></textarea>
+      <label>Link:</label>
+      <input type="url" required>
+      <button type="submit" class="btn-save">Salvar</button>
+    </form>
+  </div>
+</div>
+
+<!-- Modal - Trabalho Voluntário -->
+<div id="modalVoluntario" class="modal">
+  <div class="modal-content">
+    <span class="close-button" data-close="modalVoluntario">&times;</span>
+    <h4><i class="fas fa-hands-helping"></i> Adicionar Trabalho Voluntário</h4>
+    <form class="modal-form">
+      <label>Atividade:</label>
+      <input type="text" required>
+      <label>Local / Instituição:</label>
+      <input type="text" required>
+      <label>Período:</label>
+      <input type="text" required>
+      <button type="submit" class="btn-save">Salvar</button>
+    </form>
+  </div>
+</div>
+
+<!-- Modal - Alterar Senha -->
+<div id="modalSenha" class="modal">
+  <div class="modal-content">
+    <span class="close-button" data-close="modalSenha">&times;</span>
+    <h4><i class="fas fa-key"></i> Alterar Senha</h4>
+    <form class="modal-form">
+      <label>Senha Atual:</label>
+      <input type="password" required>
+      <label>Nova Senha:</label>
+      <input type="password" required>
+      <label>Confirmar Nova Senha:</label>
+      <input type="password" required>
+      <button type="submit" class="btn-save">Salvar Senha</button>
+    </form>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="footer">
+      <div class="contact-info">
+        <p>Praça Duque de Caxias, 169 - Centro - Mogi Mirim</p>
+      </div>
+      <div class="social-media">
+        <a href="https://web.facebook.com/sanquim/"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/colegiosanquim/"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/channel/UCc1HL8KqpsJat7hDp90mnag"><i class="fab fa-youtube"></i></a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Modais serão adicionados em seguida -->
+   <script src="../Aluno/dashboard.js"></script>
+  <script src="professor-perfil.js"></script>
+</body>
+</html>

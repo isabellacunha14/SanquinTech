@@ -1,14 +1,6 @@
 /* css/novo-modulo-estilo.css */
-
-/* Remova o CSS básico do body e container se já estiverem definidos globalmente */
-/* Se não, mantenha ou mescle com seus estilos globais */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0; /* Mantenha o fundo padrão claro */
-    margin: 0; /* Remova margens padrão do body para máximo controle */
-    padding: 0; /* Remova paddings padrão do body */
-    color: #333;
-}
+/* Importa os estilos base do dashboard do aluno */
+@import url("../Aluno/dashboard.css");
 
 /* O elemento que envolve todo o conteúdo principal da página */
 .content-area { /* Sua tag <main> tem esta classe */

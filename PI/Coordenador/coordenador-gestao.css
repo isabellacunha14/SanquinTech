@@ -1,16 +1,6 @@
 /* css/coordenador-gestao.css ou seu arquivo principal de estilos para esta página */
-
-/* Estilos Globais (Verifique se já tem isso em um arquivo base) */
-body {
-    font-family: 'Quicksand', sans-serif; /* Usando a fonte do seu HTML */
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    line-height: 1.6;
-}
-
-
+/* Importa os estilos base do dashboard do aluno */
+@import url("../Aluno/dashboard.css");
 
 /* Área de Conteúdo Principal (Centraliza o container) */
 .content-area {

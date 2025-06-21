@@ -1,0 +1,291 @@
+/* Importa estilos comuns, como navbar, footer e background-container */
+@import url("../Aluno/dashboard.css");
+
+/* Estilos para as novas páginas */
+.profile-dashboard {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* 1 parte para a coluna esquerda, 2 para a direita */
+    gap: 30px; /* Espaçamento entre as colunas */
+    width: 90%;
+    max-width: 1200px; /* Largura máxima para a área de perfil */
+    margin: 30px auto; /* Centraliza */
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+}
+
+.profile-column {
+    /* Estilos comuns para ambas as colunas */
+    background-color: #ffffffdd; /* Fundo branco para as colunas internas */
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex; /* Usar flexbox para organizar conteúdo interno */
+    flex-direction: column;
+    align-items: center; /* Centraliza itens na coluna (avatar, título) */
+}
+
+.form-scrollable-content {
+  overflow-y: auto;
+  max-height: 400px; /* Ajuste como quiser */
+  padding-right: 8px;
+}
+
+/* Coluna de Informações Acadêmicas (Esquerda) */
+.academic-info-column {
+    background-color: #ffffffee;
+    border-left: 5px solid #fdc64b;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.profile-avatar img {
+    width: 135px;
+    height: 135px;
+    border-radius: 50%;
+    border: 4px solid #fdc64b; /* amarelo vibrante da identidade */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+    margin-top: 10px;
+}
+.profile-academic-info {
+    width: 100%; /* Ocupa a largura total da coluna */
+    text-align: left; /* Alinha o texto à esquerda dentro desta div */
+}
+
+.profile-academic-info h3 {
+    color:#000;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.profile-academic-info p {
+    margin: 15px 0;
+    font-size: 1.01em;
+    color: #000;
+}
+
+.profile-academic-info strong {
+    color: #000000;
+}
+
+/* Coluna de Informações Pessoais (Direita) - Formulário */
+.personal-info-column {
+    overflow-y: auto;
+    border-left: 6px solid #fdc64b;
+    /* Pode ter estilos específicos aqui se precisar */
+}
+
+.personal-info-column h3{
+    color: #000000;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 1.4em;
+    font-weight: bold;;
+    text-align: center;
+}
+
+.personal-info-column i{
+    font-size: 1em;
+}
+
+.personal-info-form {
+    width: 100%;
+    /* Remove padding/margin que estava no .profile-card anterior */
+}
+
+.form-group {
+    margin-bottom: 18px; /* Espaço entre os grupos de formulário */
+    text-align: left; /* Alinha rótulos e inputs à esquerda */
+}
+
+.form-group label {
+    display: block; /* Cada rótulo em sua própria linha */
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #000000;
+    font-size: 0.95em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="tel"],
+.form-group input[type="email"] {
+    width: calc(100% - 24px); /* Full width menos padding */
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #000000;
+    background-color: #f9f9f9; /* Um leve fundo para os inputs */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #ffcc66;
+    box-shadow: 0 0 0 3px rgba(255, 204, 102, 0.2); /* Sombra suave ao focar */
+    outline: none; /* Remove o contorno padrão do navegador */
+}
+
+.form-group input[readonly] {
+    background-color: #eee; /* Fundo diferente para campos somente leitura */
+    cursor: not-allowed;
+    border-color: #ccc;
+    color: #777;
+}
+
+.form-actions {
+    padding-top: 15px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    border-top: 1px solid #eee;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+}
+
+.btn-save {
+    background-color: #3c9090;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-save:hover {
+    background-color: #008b99;
+    transform: translateY(-2px); /* Pequeno efeito de elevação */
+}
+
+.btn-alterar {
+    background-color: #008b99 ;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-right: 15px;
+}
+
+.btn-alterar:hover {
+    background-color: #006f80;
+    transform: translateY(-2px); /* Pequeno efeito de elevação */
+}
+
+/* Estilos para o botão Editar Perfil */
+.btn-edit {
+    background-color: #ffcc66 ; /* Cor azul para "Editar" */
+    color: #000;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-right: 15px; /* Espaço entre "Editar" e "Salvar" */
+}
+
+.btn-edit:hover {
+    background-color: #ffbb33;
+    transform: translateY(-2px);
+}
+
+/* Estilos para botões desabilitados */
+.btn-save:disabled,
+.btn-edit:disabled {
+    background-color: #cccccc; /* Cor cinza para desabilitado */
+    color: #666666;
+    cursor: not-allowed;
+    transform: none; /* Remove efeito de hover/press */
+    box-shadow: none;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px; /* menor e mais delicado */
+  position: relative;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centraliza horizontalmente */
+  text-align: center;  /* centraliza o texto */
+}
+
+.modal-content h4 {
+  font-size: 1.4em;
+  margin-bottom: 20px;
+  color: #3c9090;
+}
+
+.modal-content .form-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.modal-content label {
+  display: block;
+  margin-bottom: 5px;
+  color: #000;
+  font-weight: 600;
+  font-size: 0.95em;
+  text-align: left; /* ainda alinha os rótulos à esquerda */
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  background-color: #fdfdfd;
+  transition: border-color 0.3s ease;
+}
+
+.modal-content input:focus {
+  outline: none;
+  border-color: #3c9090;
+  box-shadow: 0 0 0 2px rgba(60, 144, 144, 0.2);
+}
+
+.modal-content .form-actions {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.modal-content .btn-save {
+  background-color: #3c9090;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.95em;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content .btn-save:hover {
+  background-color: #008b99;
+}

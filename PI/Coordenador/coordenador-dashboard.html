@@ -30,93 +30,77 @@
         <main class="content-area">
             <div class="main-dashboard-card"> 
                 <div class="welcome-section">
-                    <h2>Olá, Coordenador(a) <span>[Nome do Coordenador]</span>.</h2>
-                    <p>Bem-vindo(a) ao Portal do Coordenador SanquimTech.</p>
+                    <h2>Olá, Funcionário(a) <span>[Nome do Funcionário]</span>.</h2>
+                    <p>Bem-vindo(a) ao Painel Administrativo SanquimTech.</p>
                 </div>
+                
                 <div class="dashboard-grid"> 
-                    <div class="grid-item notice-board-container">
-                        <h3><i class="fas fa-bell"></i> Quadro de Avisos</h3>
-                        <div class="notice-list" id="coordenadorNoticeBoard">
-                            <div class="notice-item">
-                                <div class="notice-item-header">
-                                    <p><strong>Reunião de Coordenação</strong></p>
-                                    <span class="notice-date">28/05</span>
-                                </div>
-                                <p class="notice-detail">Importante reunião sobre o planejamento do próximo semestre. Favor confirmar presença.</p>
-</div>
-                            <div class="notice-item">
-                                <div class="notice-item-header">
-                                    <p><strong>Entrega de Notas - Prazo Final</strong></p>
-                                    <span class="notice-date">15/06</span>
-                                </div>
-                                <p class="notice-detail">Lembrete: O prazo final para a entrega das notas do 1º bimestre é 15/06.</p>
+                    <!-- Aplicando as classes específicas para o dimensionamento -->
+                    <div class="grid-item consulta-container">
+                        <h3><i class="fas fa-search"></i> Consulta Acadêmica</h3>
+                        <p class="description">Busque por informações de alunos e cursos vigentes.</p>
+                        <form class="consulta-form">
+                            <div class="form-group">
+                                <input type="text" id="searchInput" placeholder="Nome, matrícula, CPF ou curso...">
                             </div>
-                            <div class="notice-item">
-                                <div class="notice-item-header">
-                                    <p><strong>Semana de Recuperação</strong></p>
-                                    <span class="notice-date">01/07</span>
-                                </div>
-                                <p class="notice-detail">As provas de recuperação do 1º bimestre ocorrerão de 01/07 a 05/07. Consulte o calendário.</p>
-                            </div>
-                            <div class="notice-item">
-                                <div class="notice-item-header">
-                                    <p><strong>Novas Diretrizes Pedagógicas</strong></p>
-                                    <span class="notice-date">03/06</span>
-                                </div>
-                                <p class="notice-detail">Material sobre as novas diretrizes para o 2º semestre disponível na área de documentos da coordenação.</p>
-                            </div>
-                            <div class="notice-item">
-                                <div class="notice-item-header">
-                                    <p><strong>Workshop de Metodologias Ativas</strong></p>
-                                    <span class="notice-date">10/06</span>
-                                </div>
-                                <p class="notice-detail">Inscrições abertas para o workshop de metodologias ativas. Vagas limitadas! Confira na secretaria.</p>
-                            </div>
-                            <div class="notice-item">
-                                <div class="notice-item-header">
-                                    <p><strong>Férias Escolares</strong></p>
-                                    <span class="notice-date">15/07</span>
-                                </div>
-                                <p class="notice-detail">Informamos que o recesso escolar de meio de ano será de 15/07 a 30/07. Boas férias!</p>
-                            </div>
-                        </div>
+                            <button type="submit" class="btn-buscar"><i class="fas fa-check"></i>Buscar</button>
+                        </form>
                     </div>
-                    <div class="grid-item schedule-container">
-                        <h3><i class="fas fa-calendar-alt"></i> Meu Horário</h3>
-                        <div class="schedule-filters">
-                            <label for="filterClass">Filtrar por Turma:</label>
-                            <select id="filterClass">
-                                <option value="all">Todas as Turmas</option>
-                            </select>
-
-                            <label for="filterSubject">Filtrar por Disciplina:</label>
-                            <select id="filterSubject">
-                                <option value="all">Todas as Disciplinas</option>
-                            </select>
-
-                            <button id="resetFilters">Limpar Filtros</button>
-                            <div id="coordenadorSchedule">
-                                <!-- Tabela de horários permanece igual -->
-                                <!-- ... (sem alteração estrutural aqui, apenas troca do ID) -->
-                                <!-- Conteúdo da tabela omitido por brevidade -->
-                            </div>
-                        </div>
+                    
+                <div class="notice-board-content">
+                    <h3><i class="fas fa-bell"></i> Notificações!</h3>
+                    <div class="message-item" data-user="João da Silva" data-type="Aluno" data-subject="Problema no login" data-message="Não consigo acessar meu painel desde ontem." data-email="joao@exemplo.com">
+                        <h4>João da Silva <span class="badge">Aluno</span></h4>
+                        <p><strong>Assunto:</strong> Problema no login</p>
+                        <p class="notice-date">16/06</p>
+                        <p class="notice-time">10:30</p>
+                    </div>
+                    
+                    <div class="message-item" data-user="Maria Fernandes" data-type="Professor" data-subject="Atualização de chamada" data-message="Preciso atualizar as frequências da turma 3B." data-email="maria@escola.com">
+                        <h4>Maria Fernandes <span class="badge">Professor</span></h4>
+                        <p><strong>Assunto:</strong> Atualização de chamada</p>
+                        <p class="notice-date">15/06</p>
+                        <p class="notice-time">17:00</p>
+                    </div>
+                    <div class="message-item" data-user="Arthur Nogueira" data-type="Professor" data-subject="Data da semana de avaliações" data-message="Preciso da confirmação da data da semana de avaliações." data-email="joao2@exemplo.com">
+                        <h4>Arthur Nogueira <span class="badge">Professor</span></h4>
+                        <p><strong>Assunto:</strong> Data da semana de avaliações</p>
+                        <p class="notice-date">17/06</p>
+                        <p class="notice-time">11:30</p>
+                    </div>
+                    <div class="message-item" data-user="Maria Fernandes" data-type="Professor" data-subject="Atualização de chamada" data-message="Preciso atualizar as frequências da turma 3B." data-email="maria@escola.com">
+                        <h4>Maria Fernandes <span class="badge">Professor</span></h4>
+                        <p><strong>Assunto:</strong> Atualização de chamada</p>
+                        <p class="notice-date">15/06</p>
+                        <p class="notice-time">17:00</p>
                     </div>
                 </div>
-            </div>
 
-            <div id="lessonDetailModal" class="modal">
+
+                    <div class="grid-item actions-container">
+                        <h3><i class="fas fa-rocket"></i> Ações Rápidas</h3>
+                        <ul class="actions-list">
+                            <li><a href="funcionario-cadastroUsuario.html"><i class="fas fa-user-plus"></i> Cadastrar Novo Aluno</a></li>
+                            <li><a href="funcionario-cadastroUsuario.html"><i class="fas fa-chalkboard-teacher"></i> Cadastrar Novo Professor</a></li>
+                            <li><a href="funcionario-cadastroAcademico.html"><i class="fas fa-book-open"></i> Criar Novo Curso</a></li>
+                            <li><a href="funcionario-biblioteca.html"><i class="fas fa-chart-bar"></i> Upload de Materiais</a></li>
+                            <li><a href="#" id="changePasswordBtn"><i class="fas fa-key"></i> Alterar Senha</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>     
+                <div id="messageDetailModal" class="modal">
                 <div class="modal-content">
-                    <span class="close-button">&times;</span>
-                    <h4 id="modalSubject" style="color: #ffbb33;"></h4>
-                    <p><strong>Turma:</strong> <span id="modalClass"></span></p>
-                    <p><strong>Horário:</strong> <span id="modalTime"></span></p>
-                    <p><strong>Dia:</strong> <span id="modalDay"></span></p>
-                    <p><strong>Sala:</strong> <span id="modalRoom"></span></p>
-                    <p><strong>Tópico:</strong> <span id="modalTopic"></span></p>
-                    <p><strong>Observações:</strong> <span id="modalNotes"></span></p>
+                    <span class="close-button" data-close="messageDetailModal">&times;</span>
+                    <h4><i class="fas fa-envelope-open-text"></i> Detalhes da Mensagem</h4>
+                    <p><strong>Remetente:</strong> <span id="modalSender"></span></p>
+                    <p><strong>Tipo:</strong> <span id="modalType"></span></p>
+                    <p><strong>Assunto:</strong> <span id="modalSubject"></span></p>
+                    <p><strong>Mensagem:</strong></p>
+                    <p id="modalMessage" style="margin-bottom: 10px;"></p>
+                    <p><strong>Responder para:</strong> <a href="#" id="modalEmail" target="_blank">E-mail</a></p>
                 </div>
-            </div>
+                </div>
         </main>
 
         <footer class="footer">

@@ -121,35 +121,191 @@ document.addEventListener('DOMContentLoaded', () => {
         showSlide(0);
     }
 
-    if (calendarContainer) { // Se o calendário existe na página
-        // Lógica do calendário aqui
-        const eventSlots = document.querySelectorAll('.event-slot');
-        eventSlots.forEach(slot => {
-            slot.addEventListener('click', () => {
-                const day = slot.dataset.day;
-                const time = slot.dataset.time;
+    // --- Lógica do Calendário de Eventos (Dashboard do Aluno) ---
 
-                if (slot.classList.contains('event')) {
-                    if (confirm(`Remover evento "${slot.textContent}" de ${day} às ${time}?`)) {
-                        slot.classList.remove('event');
-                        slot.textContent = '';
-                        slot.className = 'event-slot';
-                        slot.setAttribute('data-time', time);
-                        slot.setAttribute('data-day', day);
-                        console.log(`Evento removido de ${day} às ${time}`);
-                    }
-                } else {
-                    const eventText = prompt(`Criar evento para ${day} às ${time}. Digite o nome do evento:`);
-                    if (eventText) {
-                        slot.classList.add('event');
-                        slot.textContent = eventText;
-                        console.log(`Evento criado: ${eventText} em ${day} às ${time}`);
-                    }
-                }
-            });
-        });
+const calendarBody = document.getElementById('calendarBody');
+const lessonDetailModal = document.getElementById('lessonDetailModal');
+const closeButton = lessonDetailModal ? lessonDetailModal.querySelector('.close-button') : null;
+
+// Elementos do modal de detalhes
+const modalSubject = document.getElementById('modalSubject');
+const modalClass = document.getElementById('modalClass');
+const modalRoom = document.getElementById('modalRoom');
+const modalTopic = document.getElementById('modalTopic');
+const modalNotes = document.getElementById('modalNotes');
+const modalTime = document.getElementById('modalTime');
+const modalDay = document.getElementById('modalDay');
+
+
+// Dados FICTÍCIOS do horário do ALUNO
+// Você substituirá isso por dados reais vindo do seu backend/API
+const studentScheduleData = [
+    {
+        day: 'seg',
+        time: '08:00',
+        subject: 'Matemática',
+        class: 'Turma B',
+        room: 'Sala 101',
+        topic: 'Álgebra Linear',
+        notes: 'Revisar capítulos 1 e 2. Trazer calculadora.'
+    },
+    {
+        day: 'seg',
+        time: '10:00',
+        subject: 'Português',
+        class: 'Turma B',
+        room: 'Sala 202',
+        topic: 'Interpretação de Textos',
+        notes: 'Leitura obrigatória do conto "O Cortiço".'
+    },
+    {
+        day: 'ter',
+        time: '09:00',
+        subject: 'História',
+        class: 'Turma B',
+        room: 'Sala 301',
+        topic: 'Revolução Francesa',
+        notes: 'Fazer o mapa conceitual.'
+    },
+    {
+        day: 'ter',
+        time: '11:00',
+        subject: 'Ciências',
+        class: 'Turma B',
+        room: 'Laboratório de Ciências',
+        topic: 'Sistema Digestório',
+        notes: 'Experimento prático.'
+    },
+    {
+        day: 'qua',
+        time: '08:00',
+        subject: 'Inglês',
+        class: 'Turma B',
+        room: 'Sala 103',
+        topic: 'Grammar: Past Simple',
+        notes: 'Praticar com os exercícios do livro.'
+    },
+    {
+        day: 'qui',
+        time: '14:00',
+        subject: 'Educação Física',
+        class: 'Turma B',
+        room: 'Quadra Esportiva',
+        topic: 'Basquete',
+        notes: 'Trazer uniforme.'
+    },
+    {
+        day: 'sex',
+        time: '13:00',
+        subject: 'Geografia',
+        class: 'Turma B',
+        room: 'Sala 201',
+        topic: 'Climas do Brasil',
+        notes: 'Pesquisar sobre o clima da sua região.'
     }
+    // Adicione mais eventos aqui conforme necessário
+];
 
+
+function populateStudentSchedule() {
+    if (!calendarBody) return; // Garante que o elemento existe
+
+    calendarBody.innerHTML = ''; // Limpa o calendário existente
+
+    const daysOfWeek = ['seg', 'ter', 'qua', 'qui', 'sex'];
+    const displayDays = ['Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira'];
+    const hours = Array.from({ length: 17 }, (_, i) => 7 + i); // Das 07:00 às 23:00
+
+    hours.forEach(hour => {
+        const hourString = `${String(hour).padStart(2, '0')}:00`;
+        const nextHourString = `${String(hour + 1).padStart(2, '0')}:00`;
+
+        const calendarRow = document.createElement('div');
+        calendarRow.classList.add('calendar-row');
+
+        // Coluna de Horário
+        const timeSlot = document.createElement('div');
+        timeSlot.classList.add('time-slot');
+        timeSlot.textContent = hourString;
+        calendarRow.appendChild(timeSlot);
+
+        daysOfWeek.forEach((day, index) => {
+            const eventCell = document.createElement('div');
+            eventCell.classList.add('event-cell');
+
+            // Encontra eventos para este dia e horário
+            const eventsForSlot = studentScheduleData.filter(event =>
+                event.day === day && event.time === hourString
+            );
+
+            if (eventsForSlot.length > 0) {
+                eventsForSlot.forEach(event => {
+                    const eventCard = document.createElement('div');
+                    eventCard.classList.add('event-card');
+                    eventCard.classList.add(event.subject.toLowerCase().replace(/\s/g, '-')); // Adiciona classe para estilização por matéria
+
+                    // Exibe apenas o tópico principal no card, ou a matéria se o tópico for muito longo
+                    eventCard.innerHTML = `<strong>${event.topic || event.subject}</strong>`;
+                    if (event.class) {
+                        eventCard.innerHTML += `<small>${event.class}</small>`;
+                    }
+
+
+                    // Armazena todos os dados do evento no dataset do elemento para o modal
+                    eventCard.dataset.subject = event.subject;
+                    eventCard.dataset.class = event.class;
+                    eventCard.dataset.room = event.room;
+                    eventCard.dataset.topic = event.topic;
+                    eventCard.dataset.notes = event.notes;
+                    eventCard.dataset.time = event.time;
+                    eventCard.dataset.day = displayDays[index]; // Nome completo do dia
+
+                    eventCard.addEventListener('click', () => {
+                        showLessonDetail(event); // Passa o objeto evento completo
+                    });
+
+                    eventCell.appendChild(eventCard);
+                });
+            }
+            calendarRow.appendChild(eventCell);
+        });
+        calendarBody.appendChild(calendarRow);
+    });
+}
+
+// Função para mostrar os detalhes da aula no modal
+function showLessonDetail(eventData) {
+    if (!lessonDetailModal) return;
+
+    modalSubject.textContent = eventData.subject || 'N/A';
+    modalClass.textContent = eventData.class || 'N/A';
+    modalRoom.textContent = eventData.room || 'N/A';
+    modalTopic.textContent = eventData.topic || 'N/A';
+    modalNotes.textContent = eventData.notes || 'N/A';
+    modalTime.textContent = eventData.time || 'N/A';
+    // Encontra o nome completo do dia baseado na abreviação
+    const dayIndex = ['seg', 'ter', 'qua', 'qui', 'sex'].indexOf(eventData.day);
+    modalDay.textContent = dayIndex !== -1 ? ['Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira'][dayIndex] : 'N/A';
+
+    lessonDetailModal.classList.add('show');
+}
+
+// Lógica para fechar o modal
+if (lessonDetailModal && closeButton) {
+    closeButton.addEventListener('click', () => {
+        lessonDetailModal.classList.remove('show');
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target == lessonDetailModal) {
+            lessonDetailModal.classList.remove('show');
+        }
+    });
+}
+
+
+// Chama a função para popular o calendário quando a página carrega
+populateStudentSchedule();
 // Lógica para a página de perfil
     const personalInfoForm = document.getElementById('personalInfoForm');
     const editProfileBtn = document.getElementById('editProfileBtn');
@@ -219,4 +375,46 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleEditMode(false);
         });
     }
+
+    // Troca de senha
+const changePasswordBtn = document.getElementById('alterarProfileBtn');
+const passwordModal = document.getElementById('passwordModal');
+const closePasswordModal = document.getElementById('closePasswordModal');
+const passwordForm = document.getElementById('passwordForm');
+
+if (changePasswordBtn && passwordModal && closePasswordModal && passwordForm) {
+  changePasswordBtn.addEventListener('click', () => {
+    passwordModal.classList.add('show');
+  });
+
+  closePasswordModal.addEventListener('click', () => {
+    passwordModal.classList.remove('show');
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === passwordModal) {
+      passwordModal.classList.remove('show');
+    }
+  });
+
+  passwordForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const current = document.getElementById('currentPassword').value;
+    const nova = document.getElementById('newPassword').value;
+    const confirmar = document.getElementById('confirmPassword').value;
+
+    if (nova !== confirmar) {
+      alert('As novas senhas não coincidem!');
+      return;
+    }
+
+    // Simula envio
+    console.log('Senha alterada:', { atual: current, nova });
+
+    alert('Senha alterada com sucesso!');
+    passwordModal.classList.remove('show');
+    passwordForm.reset();
+  });
+}
+
 });

@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    font-family: "Quicksand", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0; /* Cor de fallback caso a imagem não carregue */
+    color:#000000;
+    overflow: hidden; /* Evita barras de rolagem */
+}
+
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('../Imagens/background.png'); /* Imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.95); /* Fundo branco semi-transparente para o card */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 350px; /* Largura fixa para o card de login */
+    max-width: 90%; /* Garante responsividade em telas menores */
+}
+
+.logo {
+    margin-bottom: 25px;
+}
+
+.logo img {
+    max-width: 200px; /* Ajuste o tamanho do logotipo conforme necessário */
+    height: auto;
+}
+
+h2 {
+    color: #000000;
+    margin-bottom: 20px;
+    margin-left: 12px;
+    font-size: 20px;
+    text-align: left;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: calc(100% - 20px); /* Largura total menos padding */
+    padding: 12px 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #000000;
+    background-color: #fffaf0; /* Cor similar ao campo da imagem */
+    box-sizing: border-box; /* Garante que padding não aumente a largura total */
+}
+
+.input-group input:focus{
+    border-color: #ffcc66;
+    box-shadow: 0 0 0 3px rgba(255, 204, 102, 0.2);
+    outline: none;
+}
+
+.input-group input::placeholder {
+    color: #000000;
+}
+
+.btn-entrar {
+    background-color: #ffcc66; /* Cor do botão similar à imagem */
+    color: #000000; /* Cor do texto no botão */
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 95%;
+    margin-top: 10px;
+}
+
+.btn-entrar:hover {
+    background-color: #ffbb33; /* Um tom ligeiramente mais escuro ao passar o mouse */
+}
+
+.forgot-password {
+    display: block;
+    margin-top: 20px;
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-password:hover {
+    color: #ffbb33;
+    text-decoration: underline;
+}
+.error-message {
+    color: #dc3545; /* Vermelho para erros */
+    margin-top: 15px;
+    font-size: 0.9em;
+    height: 1.2em; /* Para manter o espaço mesmo quando vazio */
+    transition: opacity 0.3s ease;
+}
+
+.error-message.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 25px;
+        margin: 20px;
+    }
+    .logo img {
+        max-width: 150px;
+    }
+    .h2 {
+        font-size: 1.8em;
+    }
+    .input-group input {
+        padding: 12px 8px;
+        font-size: 1em;
+    }
+    .btn-entrar {
+        padding: 12px 20px;
+        font-size: 1.1em;
+    }
+}
