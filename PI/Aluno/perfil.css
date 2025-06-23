@@ -60,9 +60,14 @@
 }
 
 .profile-academic-info h3 {
-    color:#000;
+    color:#3c9090;
     font-weight: bold;
     margin-bottom: 25px;
+}
+
+.profile-academic-info i{
+    color: #ffbb33;
+    font-size: 1em;
 }
 
 .profile-academic-info p {
@@ -83,7 +88,7 @@
 }
 
 .personal-info-column h3{
-    color: #000000;
+    color: #3c9090;
     margin-top: 0;
     margin-bottom: 25px;
     font-size: 1.4em;
@@ -92,6 +97,7 @@
 }
 
 .personal-info-column i{
+    color: #ffbb33;
     font-size: 1em;
 }
 

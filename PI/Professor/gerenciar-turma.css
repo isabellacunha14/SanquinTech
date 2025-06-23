@@ -13,7 +13,7 @@
 
 .tab-button {
     background-color: #f0f0f0; /* Cor de fundo padrão dos botões */
-    color: #333;
+    color: #000;
     border: none;
     padding: 12px 25px;
     border-radius: 8px;
@@ -31,9 +31,9 @@
 }
 
 .tab-button.active {
-    background-color: #ff8c00; /* Cor laranja do seu tema */
+    background-color: #ffbb33; /* Cor laranja do seu tema */
     color: #ffffff;
-    box-shadow: 0 4px 12px rgba(255, 140, 0, 0.3); /* Sombra mais destacada */
+    box-shadow: 0 4px 12px #ffbb33; /* Sombra mais destacada */
 }
 
 /* Container para o conteúdo das abas */
@@ -55,7 +55,7 @@
 }
 
 .tab-pane h3 {
-    color: #ff8c00; /* Cor laranja para os títulos das seções */
+    color: #3c9090; /* Cor laranja para os títulos das seções */
     font-size: 1.6em;
     margin-bottom: 20px;
     border-bottom: 2px solid #f0f0f0;
@@ -63,7 +63,7 @@
 }
 
 .tab-pane p {
-    color: #555;
+    color: #000;
     line-height: 1.6;
 }
 
@@ -84,9 +84,9 @@
 }
 
 .frequencia-table th {
-    background-color: #ffcc66; /* Laranja claro */
-    color: #333;
-    font-weight: 600;
+    background-color: #ffbb33; /* Laranja claro */
+    color: #000;
+    font-weight: bold;
 }
 
 .frequencia-table tbody tr:nth-child(even) {
@@ -94,7 +94,7 @@
 }
 
 .frequencia-table tbody tr:hover {
-    background-color: #f0f0f0;
+    background-color: #ffcc66;
 }
 
 .frequencia-table input[type="radio"] {
@@ -114,7 +114,7 @@
 
 .frequencia-controls label {
     font-weight: 600;
-    color: #333;
+    color: #000;
 }
 
 .frequencia-controls input[type="date"] {
@@ -138,20 +138,22 @@
 
 #marcarTodosPresentes {
     background-color: #66bb6a; /* Verde */
-    color: white;
+    color: #000;
 }
 
 #marcarTodosPresentes:hover {
-    background-color: #4CAF50; /* Verde mais escuro */
+    background-color: #3c9090; /* Verde mais escuro */
+    color:#fff;
 }
 
 #salvarFrequencia {
-    background-color: #ff8c00; /* Laranja do tema */
-    color: white;
+    background-color: #ffbb33; /* Laranja do tema */
+    color: #000;
 }
 
 #salvarFrequencia:hover {
-    background-color: #e07b00; /* Laranja mais escuro */
+    background-color: #3c9090; /* Laranja mais escuro */
+    color:#fff;
 }
 
 /* Mensagens de erro/sucesso */
@@ -176,8 +178,8 @@
 }
 
 .notas-table th {
-    background-color: #ffcc66; /* Laranja claro */
-    color: #333;
+    background-color: #ffbb33; /* Laranja claro */
+    color: #000;
     font-weight: 600;
 }
 
@@ -186,7 +188,7 @@
 }
 
 .notas-table tbody tr:hover {
-    background-color: #f0f0f0;
+    background-color: #ffcc66;
 }
 
 .notas-table input[type="number"],
@@ -209,8 +211,8 @@
 }
 
 .notas-controls label {
-    font-weight: 600;
-    color: #333;
+    font-weight: bold;
+    color: #000;
 }
 
 .notas-controls select {
@@ -232,12 +234,13 @@
     font-size: 0.95em;
     font-weight: 600;
     transition: background-color 0.3s ease, color 0.3s ease;
-    background-color: #ff8c00; /* Laranja do tema */
-    color: white;
+    background-color: #ffbb33; /* Laranja do tema */
+    color: #000;
 }
 
 .notas-controls button:hover {
-    background-color: #e07b00; /* Laranja mais escuro */
+    background-color: #3c9090; /* Laranja mais escuro */
+    color:#fff;
 }
 
 /* Estilos para o formulário de Registro de Aulas */
@@ -250,7 +253,7 @@
 }
 
 .aula-form-container h4 {
-    color: #ff8c00;
+    color: #3c9090;
     font-size: 1.4em;
     margin-bottom: 20px;
     border-bottom: 1px solid #f0f0f0;
@@ -264,7 +267,7 @@
 .form-group label {
     display: block;
     font-weight: 600;
-    color: #333;
+    color: #000;
     margin-bottom: 8px;
 }
 
@@ -285,8 +288,8 @@
 }
 
 #registrarAulaBtn {
-    background-color: #4CAF50; /* Verde */
-    color: white;
+    background-color: #ffbb33; /* Verde */
+    color: #000;
     padding: 12px 25px;
     border: none;
     border-radius: 8px;
@@ -298,7 +301,8 @@
 }
 
 #registrarAulaBtn:hover {
-    background-color: #45a049;
+    background-color: #3c9090;
+    color:#fff;
 }
 
 .separator {
@@ -337,13 +341,13 @@
 }
 
 .record-header strong {
-    color: #666;
+    color: #000;
     font-size: 1.1em;
 }
 
 .aula-record-card p {
     margin-bottom: 8px;
-    color: #555;
+    color: #000;
     line-height: 1.5;
 }
 
@@ -376,7 +380,7 @@
 }
 
 .planejamento-section h4 {
-    color: #ff8c00;
+    color: #3c9090;
     font-size: 1.4em;
     margin-bottom: 20px;
     border-bottom: 1px solid #f0f0f0;
@@ -396,8 +400,8 @@
 }
 
 #salvarPlanejamentoBtn {
-    background-color: #ff8c00; /* Laranja do tema */
-    color: white;
+    background-color: #ffbb33; /* Laranja do tema */
+    color: #000;
     padding: 12px 25px;
     border: none;
     border-radius: 8px;
@@ -409,7 +413,8 @@
 }
 
 #salvarPlanejamentoBtn:hover {
-    background-color: #e07b00;
+    background-color: #3c9090;
+    color:#fff;
 }
 
 /* Estilos para a seção de Materiais */
@@ -421,7 +426,7 @@
 }
 
 .materiais-section h4 {
-    color: #ff8c00;
+    color: #3c9090;
     font-size: 1.4em;
     margin-bottom: 20px;
     border-bottom: 1px solid #f0f0f0;
@@ -439,8 +444,8 @@
 }
 
 #adicionarMaterialBtn {
-    background-color: #007bff; /* Azul para adicionar */
-    color: white;
+    background-color: #ffbb33; /* Azul para adicionar */
+    color: #000;
     padding: 12px 25px;
     border: none;
     border-radius: 8px;
@@ -452,11 +457,12 @@
 }
 
 #adicionarMaterialBtn:hover {
-    background-color: #0056b3;
+    background-color: #3c9090;
+    color:#fff;
 }
 
 .materials-list-title {
-    color: #333;
+    color: #000;
     font-size: 1.2em;
     margin-top: 30px;
     margin-bottom: 15px;
@@ -484,11 +490,11 @@
 
 .materials-list li i {
     margin-right: 10px;
-    color: #ff8c00; /* Ícone laranja */
+    color: #ffbb33; /* Ícone laranja */
 }
 
 .materials-list li a {
-    color: #007bff; /* Azul para links */
+    color: #3c9090; /* Azul para links */
     text-decoration: none;
     flex-grow: 1; /* Permite que o link ocupe o espaço */
     transition: color 0.2s ease;
@@ -496,7 +502,7 @@
 
 .materials-list li a:hover {
     text-decoration: underline;
-    color: #0056b3;
+    color: #e07b00;
 }
 
 .materials-list .no-materials-message {

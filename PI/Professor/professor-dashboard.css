@@ -32,7 +32,7 @@
 }
 
 .welcome-section h2 span {
-    color: #ffcc66;
+    color: #3c9090;
 }
 
 .welcome-section p {
@@ -107,8 +107,8 @@
 }
 
 .notice-board-container h3{
-    color: #000;
-    font-size: 24px;
+    color: #3c9090;
+    font-size: 1.5em;
 }
 
 
@@ -204,13 +204,18 @@
 }
 
 .schedule-container td.filled {
-    background-color: #ffd9a0;
-    font-weight: 600;
+    background-color: #ffcc66;
+    font-weight: bold;
+}
+
+.schedule-container td.filled:hover{
+    background-color: #3c9090;
+    color:#fff;
 }
 
 .schedule-container h3{
-    color: #000;
-    font-size: 24px;
+    color: #3c9090;
+    font-size: 1.5em;
 }
 
 /* Estilos do Modal */
@@ -320,7 +325,7 @@
 
 .schedule-filters button {
     padding: 8px 15px;
-    background-color: #ffcc66; /* Cor laranja do seu tema */
+    background-color: #ffbb33; /* Cor laranja do seu tema */
     color: #000000;
     border: none;
     border-radius: 5px;
@@ -331,7 +336,8 @@
 }
 
 .schedule-filters button:hover {
-    background-color: #ffbb33; /* Laranja mais escuro no hover */
+    background-color: #3c9090;
+    color:#fff;
 }
 
 /* Estilos para a seção de Avisos */
@@ -352,7 +358,7 @@
 
 .avisos-form-container h3,
 .avisos-history-container h3 {
-    color: #ffcc66;
+    color: #3c9090;
     font-size: 1.5em;
     margin-bottom: 20px;
     border-bottom: 1px solid #f0f0f0;
@@ -388,7 +394,7 @@
 }
 
 #publicarAvisoBtn {
-    background-color: #ffcc66;
+    background-color: #ffbb33;
     color: #000;
     padding: 12px 25px;
     border: none;
@@ -404,7 +410,8 @@
 }
 
 #publicarAvisoBtn:hover {
-    background-color: #ffbb33;
+    background-color: #3c9090;
+    color:#fff;
 }
 
 .separator { /* Reutiliza o estilo de separator */
@@ -482,7 +489,7 @@
 
 .view-aviso-btn {
     background-color: #ffcc66; /* Verde */
-    color: white;
+    color: #fff;
 }
 
 .view-aviso-btn:hover {
@@ -491,7 +498,7 @@
 
 .delete-aviso-btn {
     background-color: #dc3545; /* Vermelho */
-    color: white;
+    color:#fff;
 }
 
 .delete-aviso-btn:hover {
@@ -506,7 +513,7 @@
 }
 
 .fa-bullhorn{
-    color: #ffcc66;
+    color: #ffbb33;
 }
 
 /* Estilos específicos para a página de Contato */
@@ -518,24 +525,24 @@
 
 #pageTitle{
     text-align: center;
-    color: #000;
+    color: #3c9090;
+    font-size: 2em;
 }
 
 #pageTitle .fa-envelope,
 .fa-bullhorn{
-    color: #ffcc66;
-    font-size: 1.3em;
+    color: #ffbb33;
+    font-size: 1em;
 }
 
-
-
 .contact-container {
-    max-width: 700px; /* Limita a largura do formulário */
-    margin: 0 auto; /* Centraliza o formulário */
-    padding: 25px;
-    background-color: #f8f8f8;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+background-color: rgba(255, 255, 255, 0.9);
+border-radius: 15px;
+box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+padding: 30px;
+width: 90%;
+max-width: 800px;
+margin: 30px auto;
 }
 
 .contact-container h1 { /* Ajuste se o h1 estiver dentro do contact-container no seu original */
@@ -565,25 +572,22 @@
 }
 
 .btn-send {
-    background-color: #ffcc66; /* Azul */
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1em;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
-    width: 100%; /* Ocupa a largura total */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+    background-color: #ffbb33;
+color: #000000;
+padding: 12px 25px;
+border: none;
+border-radius: 8px;
+font-size: 1em;
+font-weight: bold;
+cursor: pointer;
+transition: background-color 0.3s ease, transform 0.2s ease;
+display: block;
+margin: 0 auto;
 }
 
 .btn-send:hover {
-    background-color: #ff8c00;
+    background-color: #3c9090;
+    color:#fff;
 }
 
 .success-message {

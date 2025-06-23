@@ -5,20 +5,22 @@
 
 /* Ajustes para o título da página */
 .page-title .fas.fa-book-open {
-    color: #007bff; /* Azul para o título da biblioteca */
+    color: #ffbb33; /* Azul para o título da biblioteca */
+    font-size: 1em;
 }
 .page-title .fas.fa-list-alt {
-    color: #28a745; /* Verde para o título da lista */
+    color: #ffbb33; /* Verde para o título da lista */
+    font-size: 1em;
 }
 
 /* Ajustes para o botão de submit */
 .btn-submit {
-    background-color: #007bff; /* Azul para adicionar material */
-    color: white;
+    background-color: #ffbb33; /* Azul para adicionar material */
+    color: #fff;
 }
 
 .btn-submit:hover {
-    background-color: #0056b3;
+    background-color: #3c9090;
 }
 
 /* Estilos para o contêiner de campos de tipo de material (oculto por padrão) */
@@ -57,7 +59,7 @@
 
 .registro-item-material .material-info h3 {
     margin: 0;
-    color: #333;
+    color: #000;
     font-size: 1.2em;
     display: flex;
     align-items: center;
@@ -65,12 +67,12 @@
 }
 
 .registro-item-material .material-info h3 .fas {
-    color: #007bff; /* Cor para ícones de material */
+    color: #ffbb33; /* Cor para ícones de material */
 }
 
 .registro-item-material .material-info p {
     margin: 0;
-    color: #555;
+    color: #000;
     font-size: 0.95em;
 }
 

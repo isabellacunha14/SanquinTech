@@ -1,0 +1,75 @@
+/* Importa estilos comuns, como navbar, footer e background-container */
+@import url("../Aluno/dashboard.css");
+
+/* ===== Página de Notas ===== */
+
+.content-area {
+  flex-grow: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grades-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 900px;
+  text-align: center;
+}
+
+.grades-card h2 {
+  font-size: 2em;
+  color: #3C9090;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.grades-card h2 i {
+  color: #ffcc66;
+  font-size: 1em;
+}
+
+.status-info {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+
+/* ===== Tabela de Notas ===== */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+table th, table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+  text-align: center;
+  color: #000;
+}
+
+table th {
+  background-color: #fed986;
+  color: #000000;
+  font-weight: bold;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+  background-color: #fff7d2;
+  box-shadow: inset 0 0 4px #ffcc66;
+}

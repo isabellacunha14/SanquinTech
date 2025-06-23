@@ -9,10 +9,20 @@ margin: 30px auto;
 }
 
 .contact-container h1 {
-color: #000000;
+font-size: 2em;
+color: #3C9090;
 text-align: center;
 margin-bottom: 30px;
 }
+
+.contact-container .fa-envelope-open-text{
+    color: #ffbb33;
+}
+
+.contact-container .fa-paper-plane{
+    color: #000;
+}
+
 
 .form-group {
 margin-bottom: 20px;
@@ -60,6 +70,8 @@ font-size: 1em;
 font-weight: bold;
 cursor: pointer;
 transition: background-color 0.3s ease, transform 0.2s ease;
+display: block;
+margin: 0 auto;
 }
 
 .btn-send:hover {
@@ -68,9 +80,10 @@ transform: translateY(-2px);
 }
 
 .success-message {
-color: #ffbb33;
+color: #3c9090;
 margin-top: 20px;
 font-weight: bold;
+text-align: center;
 }
 
 /* Responsividade */

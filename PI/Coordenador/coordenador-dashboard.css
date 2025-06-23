@@ -291,8 +291,8 @@
 
 .avisos-form-container h3,
 .avisos-history-container h3 {
-    color: #ffcc66;
-    font-size: 1.5em;
+    color: #3c9090;
+    font-size: 1.8em;
     margin-bottom: 20px;
     border-bottom: 1px solid #f0f0f0;
     padding-bottom: 10px;
@@ -327,8 +327,8 @@
 }
 
 #publicarAvisoBtn {
-    background-color: #ffcc66;
-    color: #000;
+    background-color: #ffbb33;
+    color: #fff;
     padding: 12px 25px;
     border: none;
     border-radius: 8px;
@@ -343,7 +343,7 @@
 }
 
 #publicarAvisoBtn:hover {
-    background-color: #ffbb33;
+    background-color: #3c9090;
 }
 
 .separator { /* Reutiliza o estilo de separator */
@@ -420,12 +420,12 @@
 }
 
 .view-aviso-btn {
-    background-color: #ffcc66; /* Verde */
+    background-color: #ffbb33; /* Verde */
     color: white;
 }
 
 .view-aviso-btn:hover {
-    background-color: #ffbb33;
+    background-color: #3c9090;
 }
 
 .delete-aviso-btn {
@@ -445,7 +445,7 @@
 }
 
 .fa-bullhorn{
-    color: #ffcc66;
+    color: #ffbb33;
 }
 
 /* Estilos específicos para a página de Contato */
@@ -457,88 +457,12 @@
 
 #pageTitle{
     text-align: center;
-    color: #000;
+    color: #3c9090;
+    font-size: 2em;
 }
 
 #pageTitle .fa-envelope,
 .fa-bullhorn{
-    color: #ffcc66;
-    font-size: 1.3em;
-}
-
-
-.contact-container {
-    max-width: 700px; /* Limita a largura do formulário */
-    margin: 0 auto; /* Centraliza o formulário */
-    padding: 25px;
-    background-color: #f8f8f8;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.contact-container h1 { /* Ajuste se o h1 estiver dentro do contact-container no seu original */
-    text-align: center;
-    color: #000;
-    margin-bottom: 30px;
-}
-
-/* Os estilos .form-group, input[type="text"], textarea, etc., já devem estar no seu CSS base. */
-/* Apenas para garantir que o select também tenha estilo */
-.form-group select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    color: #ffbb33;
     font-size: 1em;
-    box-sizing: border-box;
-    font-family: 'Quicksand', sans-serif;
-    background-color: #fff; /* Fundo branco para o select */
-    appearance: none; /* Remove a seta padrão do select */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000%22%20d%3D%22M287%2C114.1L159.2%2C241.9c-3.6%2C3.6-8.2%2C5.4-12.8%2C5.4s-9.2-1.8-12.8-5.4L5.4%2C114.1c-7.2-7.2-7.2-18.9%2C0-26.1c7.2-7.2%2C18.9-7.2%2C26.1%2C0l127.3%2C127.3l127.3-127.3c7.2-7.2%2C18.9-7.2%2C26.1%2C0C294.2%2C95.2%2C294.2%2C106.9%2C287%2C114.1z%22%2F%3E%3C%2Fsvg%3E'); /* Adiciona uma seta personalizada */
-    background-repeat: no-repeat;
-    background-position: right 12px top 50%;
-    background-size: 12px auto;
-}
-
-.btn-send {
-    background-color: #ffcc66; /* Azul */
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1em;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
-    width: 100%; /* Ocupa a largura total */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
-
-.btn-send:hover {
-    background-color: #ff8c00;
-}
-
-.success-message {
-    text-align: center;
-    margin-top: 15px;
-    font-weight: 600;
-}
-
-
-/* Ajustes para responsividade dos filtros */
-@media (max-width: 768px) {
-    .schedule-filters {
-        flex-direction: column; /* Empilha os filtros em telas menores */
-        align-items: stretch; /* Estica os itens para ocupar a largura total */
-    }
-    .schedule-filters select,
-    .schedule-filters button {
-        max-width: 100%; /* Ocupa toda a largura disponível */
-    }
 }

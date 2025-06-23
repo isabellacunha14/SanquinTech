@@ -39,10 +39,14 @@
   gap: 8px;
 }
 
+.academic-info-column i{
+  color: #ffbb33;
+}
+
 .academic-info-column p {
-  font-size: 0.95em;
+  font-size: 1em;
   margin: 8px 0;
-  color: #333;
+  color: #000;
 }
 
 /* Coluna da direita (botões e banco de talentos) */
@@ -60,11 +64,15 @@
 
 .talent-info-column h3 {
   color: #3c9090;
-  font-size: 1.2em;
+  font-size: 1.5em;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.talent-info-column .fa-user-graduate{
+  color: #ffbb33;
 }
 
 .talent-buttons {
@@ -74,10 +82,10 @@
 }
 
 .btn-modal {
-  background-color: #ffcc66;
+  background-color: #ffbb33;
   color: #000;
-  padding: 10px 15px;
-  font-size: 0.95em;
+  padding: 14px 18px;
+  font-size: 0.96em;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -86,12 +94,13 @@
   transition: background-color 0.3s ease;
 }
 
-.btn-modal i {
-  margin-right: 10px;
+.btn-modal i:hover {
+  color: #fff;
 }
 
 .btn-modal:hover {
-  background-color: #ffbb33;
+  background-color: #3c9090;
+  color:#fff;
 }
 
 /* Botão de senha */
@@ -116,11 +125,9 @@
 
 .btn-password i {
   margin-right: 8px;
+  color: #fff;
 }
 
-.btn-password:hover {
-  background-color: #008b99;
-}
 
 .modal {
   display: none;

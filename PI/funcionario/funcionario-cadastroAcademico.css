@@ -5,20 +5,22 @@
 
 /* Ajustes para o título da página */
 .page-title .fas.fa-graduation-cap {
-    color: #4CAF50; /* Um verde vibrante para acadêmico */
+    color: #ffbb33; /* Um verde vibrante para acadêmico */
+    font-size: 1em;
 }
 .page-title .fas.fa-book-open {
-    color: #2196F3; /* Um azul para livros/cursos */
+    color: #ffbb33; /* Um azul para livros/cursos */
+    font-size: 1em;
 }
 
 /* Ajustes para o botão de submit, se desejar uma cor diferente */
 .btn-submit {
-    background-color: #4CAF50; /* Verde para cadastrar */
-    color: white;
+    background-color: #ffbb33; /* Verde para cadastrar */
+    color: #fff;
 }
 
 .btn-submit:hover {
-    background-color: #45a049;
+    background-color: #3c9090;
 }
 
 /* Estilos específicos para os itens de curso na lista */
@@ -43,7 +45,7 @@
 
 .registro-item-curso h3 {
     margin: 0;
-    color: #333;
+    color: #000;
     font-size: 1.2em;
     display: flex;
     align-items: center;
@@ -51,12 +53,12 @@
 }
 
 .registro-item-curso h3 .fas.fa-book {
-    color: #4CAF50; /* Verde para o ícone do curso */
+    color: #ffbb33; /* Verde para o ícone do curso */
 }
 
 .registro-item-curso p {
     margin: 0;
-    color: #555;
+    color: #000;
     font-size: 0.95em;
 }
 
@@ -68,12 +70,16 @@
 }
 
 .materias-list-container h3 {
-    color: #333;
+    color: #3c9090;
     margin-bottom: 15px;
     font-size: 1.4em;
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.materias-list-container i{
+    color:#ffbb33;
 }
 
 .materias-list {
@@ -93,7 +99,7 @@
     justify-content: space-between;
     align-items: center;
     font-size: 0.95em;
-    color: #444;
+    color: #000;
 }
 
 .materia-item .materia-details {
@@ -132,8 +138,8 @@
 }
 
 .add-materia-form .btn-add-materia {
-    background-color: #2196F3; /* Azul para adicionar matéria */
-    color: white;
+    background-color: #ffbb33; /* Azul para adicionar matéria */
+    color: #fff;
     padding: 10px 15px;
     border: none;
     border-radius: 8px;
@@ -148,7 +154,7 @@
 }
 
 .add-materia-form .btn-add-materia:hover {
-    background-color: #1976D2;
+    background-color: #3c9090;
 }
 
 /* Ajustes responsivos, se necessário */

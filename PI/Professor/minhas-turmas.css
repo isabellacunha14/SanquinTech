@@ -9,18 +9,19 @@
 }
 
 .page-header h2 {
-    color: #333;
-    font-size: 1.8em;
+    color: #3c9090;
+    font-size: 2em;
     margin-bottom: 10px;
 }
 
 .page-header h2 i {
-    color: #ff8c00; /* Cor laranja do seu tema */
+    color: #ffbb33; /* Cor laranja do seu tema */
+    font-size: 1em;
     margin-right: 10px;
 }
 
 .page-header p {
-    color: #666;
+    color: #000;
     font-size: 1em;
     max-width: 600px;
     margin: 0 auto;
@@ -53,33 +54,33 @@
 .class-card:hover {
     transform: translateY(-8px); /* Efeito de "elevação" */
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Sombra mais intensa */
-    border-color: #ff8c00; /* Borda laranja no hover */
+    border-color: #ffbb33; /* Borda laranja no hover */
 }
 
 .class-card h3 {
     font-size: 1.4em;
-    color: #ff8c00; /* Título da turma em laranja */
+    color: #3c9090; /* Título da turma em laranja */
     margin-bottom: 15px;
     font-weight: 700;
 }
 
 .class-card p {
     font-size: 0.95em;
-    color: #555;
+    color: #000;
     margin-bottom: 8px;
     line-height: 1.4;
 }
 
 .class-card p strong {
-    color: #333;
-    font-weight: 600;
+    color: #000;
+    font-weight: bold;
 }
 
 .class-card .details-button {
     display: inline-block;
     padding: 10px 15px;
-    background-color: #ffcc66; /* Laranja mais claro */
-    color: #333; /* Texto escuro no botão */
+    background-color: #ffbb33; /* Laranja mais claro */
+    color: #000; /* Texto escuro no botão */
     border: none;
     border-radius: 8px;
     text-align: center;
@@ -90,7 +91,7 @@
 }
 
 .class-card .details-button:hover {
-    background-color: #ff8c00; /* Laranja mais escuro no hover */
+    background-color: #3c9090; /* Laranja mais escuro no hover */
     color: #ffffff; /* Texto branco no hover */
 }
 

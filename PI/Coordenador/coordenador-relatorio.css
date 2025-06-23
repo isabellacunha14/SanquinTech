@@ -27,7 +27,7 @@
 
 /* Estilo para os títulos das categorias */
 .category-title {
-    color: #333;
+    color: #3c9090;
     font-size: 1.8em;
     margin-bottom: 20px;
     padding-bottom: 10px;
@@ -37,7 +37,7 @@
 }
 
 .category-title i {
-    color: #ff8c00;
+    color: #ffbb33;
     margin-right: 10px;
 }
 
@@ -67,7 +67,7 @@
     justify-content: center; /* Centraliza verticalmente o conteúdo do botão */
     text-align: center;
     text-decoration: none;
-    color: #555;
+    color: #000;
     font-size: 1em;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
     cursor: pointer;
@@ -78,25 +78,24 @@
 .grid-button:hover {
     transform: translateY(-8px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    border-color: #ff8c00;
-    color: #333;
+    border-color: #3c9090;
 }
 
 .grid-button i {
-    font-size: 2.8em;
+    font-size: 2.5em;
     margin-bottom: 15px;
-    color: #ff8c00;
+    color: #ffbb33;
     transition: color 0.3s ease;
 }
 
 .grid-button:hover i {
-    color: #ff8c00;
+    color: #3c9090;
 }
 
 .grid-button span {
     display: block;
     font-size: 1.1em;
-    color: #333;
+    color: #000;
 }
 
 /* Responsividade para telas menores - adaptando do seu CSS existente */
