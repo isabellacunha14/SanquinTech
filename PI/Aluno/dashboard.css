@@ -273,6 +273,7 @@ body {
     margin: 0;
     font-size: 1.8em;
     font-weight: bold;
+    color: #3c9090;
 }
 
 .notice-board-content {
@@ -339,12 +340,12 @@ body {
 }
 
 .notice-board-content::-webkit-scrollbar-thumb {
-    background: #888;
+    background: #ffcc66;
     border-radius: 10px;
 }
 
 .notice-board-content::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: #ffbb33;
 }
 
 
@@ -374,7 +375,6 @@ body {
     border-bottom: 1px solid #eee;
 }
 
-
 .calendar-header {
     font-weight: bold;
     text-align: center;
@@ -394,7 +394,7 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 20px; /* Espaço entre o cabeçalho e o conteúdo */
-    color: #000; /* Cor do texto do cabeçalho */
+    color: #3c9090; /* Cor do texto do cabeçalho */
 }
 
 .section-icon {
@@ -456,7 +456,7 @@ body {
 
 .event-card:hover {
     background-color: #3c9090;
-    opacity: 1;
+    color:#fff;
 }
 
 .event-card strong {
@@ -545,12 +545,12 @@ body {
 }
 
 .calendar-container::-webkit-scrollbar-thumb {
-    background: #888; /* Cor do "polegar" da barra de rolagem */
+    background: #ffcc66; /* Cor do "polegar" da barra de rolagem */
     border-radius: 10px;
 }
 
 .calendar-container::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Cor do "polegar" ao passar o mouse */
+    background: #ffbb33; /* Cor do "polegar" ao passar o mouse */
 }
 
 

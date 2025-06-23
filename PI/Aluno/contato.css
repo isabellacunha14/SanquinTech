@@ -19,10 +19,6 @@ margin-bottom: 30px;
     color: #ffbb33;
 }
 
-.contact-container .fa-paper-plane{
-    color: #000;
-}
-
 
 .form-group {
 margin-bottom: 20px;
@@ -75,9 +71,12 @@ margin: 0 auto;
 }
 
 .btn-send:hover {
-background-color: #ffbb33;
+background-color: #3c9090;
 transform: translateY(-2px);
+color:#fff;
 }
+
+
 
 .success-message {
 color: #3c9090;

@@ -83,7 +83,8 @@
 }
 
 .btn-class-details:hover {
-  background-color: #ffbb33;
+  background-color: #3C9090;
+  color:#fff;
 }
 
 .modal {
