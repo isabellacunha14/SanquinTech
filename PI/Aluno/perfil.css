@@ -171,7 +171,7 @@
 }
 
 .btn-alterar {
-    background-color: #008b99 ;
+    background-color: #3c9090 ;
     color: #fff;
     padding: 12px 25px;
     border: none;
@@ -180,12 +180,30 @@
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-right: 15px;
+    margin-right: 5px;
 }
 
 .btn-alterar:hover {
     background-color: #006f80;
     transform: translateY(-2px); /* Pequeno efeito de elevação */
+}
+
+.btn-declaration {
+  background-color: #3C9090;
+  color: #fff;
+  padding: 12px 25px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-declaration:hover {
+  background-color: #006f80;
+  transform: translateY(-2px);
 }
 
 /* Estilos para o botão Editar Perfil */
@@ -199,7 +217,7 @@
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-right: 15px; /* Espaço entre "Editar" e "Salvar" */
+    margin-right: 5px; /* Espaço entre "Editar" e "Salvar" */
 }
 
 .btn-edit:hover {
@@ -289,3 +307,5 @@
 .modal-content .btn-save:hover {
   background-color: #008b99;
 }
+
+

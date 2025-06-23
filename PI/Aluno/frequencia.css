@@ -1,0 +1,110 @@
+/* Importa os estilos base do dashboard do aluno */
+@import url("../Aluno/dashboard.css");
+
+/* ===== Estilos da Página de Frequência ===== */
+
+.content-area {
+  flex-grow: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.frequency-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 900px;
+  text-align: center;
+}
+
+.frequency-card h2 {
+  font-size: 2em;
+  color: #3c9090;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.frequency-card h2 i {
+  color: #ffcc66;
+  font-size: 1em;
+}
+
+.status-info {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+
+/* ===== Tabela de Frequência ===== */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+table th, table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+  text-align: center;
+  color: #000;
+}
+
+table th {
+  background-color: #fed986;
+  color: #000000;
+  font-weight: bold;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+  background-color: #fff7d2;
+  box-shadow: inset 0 0 4px #ffcc66;
+}
+
+.presenca-alta {
+  color: #2ecc71; /* verde */
+  font-weight: bold;
+}
+
+.presenca-media {
+  color: #f1c40f; /* amarelo */
+  font-weight: bold;
+}
+
+.presenca-baixa {
+  color: #e74c3c; /* vermelho */
+  font-weight: bold;
+}
+
+
+/* ===== Ícones de Presença/Ausência ===== */
+
+.status-icon {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.status-icon.presente {
+  color: #3c9090;
+}
+
+.status-icon.ausente {
+  color: #e74c3c;
+}
+
+.frequency-card {
+  overflow-x: auto;
+}

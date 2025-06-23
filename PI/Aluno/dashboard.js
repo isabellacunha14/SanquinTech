@@ -417,4 +417,26 @@ if (changePasswordBtn && passwordModal && closePasswordModal && passwordForm) {
   });
 }
 
+document.getElementById('requestDeclarationBtn')?.addEventListener('click', () => {
+  const modal = document.getElementById('declarationModal');
+  const today = new Date().toLocaleDateString('pt-BR');
+  document.getElementById('issueDate').textContent = today;
+  modal.classList.add('show');
+});
+
+document.querySelectorAll('.close-button').forEach(btn => {
+  const target = btn.dataset.close;
+  btn.addEventListener('click', () => {
+    document.getElementById(target)?.classList.remove('show');
+  });
+});
+
+window.addEventListener('click', (e) => {
+  const modal = document.getElementById('declarationModal');
+  if (e.target === modal) {
+    modal.classList.remove('show');
+  }
+});
+
+
 });

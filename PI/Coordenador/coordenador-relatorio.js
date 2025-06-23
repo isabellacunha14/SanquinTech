@@ -6,18 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const messageTextarea = document.getElementById('message');
     const messageSentParagraph = document.getElementById('messageSent');
 
-    // Lógica para destacar o item de navegação "Contato"
-    const navItems = document.querySelectorAll('.nav-item');
-    const currentPageNav = 'contato'; // Define a página atual para "Contato"
-
-    navItems.forEach(item => {
-        if (item.getAttribute('data-page') === currentPageNav) {
-            item.classList.add('active');
-        } else {
-            item.classList.remove('active');
-        }
-    });
-
     contactForm.addEventListener('submit', (event) => {
         event.preventDefault(); // Impede o envio padrão do formulário
 

@@ -98,18 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
         renderAvisosList(); // Atualiza a lista de avisos
     });
 
-    // Lógica para destacar o item de navegação "Avisos"
-    const navItems = document.querySelectorAll('.nav-item');
-    const currentPageNav = 'avisos'; // Define a página atual para "Avisos"
-
-    navItems.forEach(item => {
-        if (item.getAttribute('data-page') === currentPageNav) {
-            item.classList.add('active');
-        } else {
-            item.classList.remove('active');
-        }
-    });
-
     // Renderiza a lista de avisos ao carregar a página
     renderAvisosList();
 });

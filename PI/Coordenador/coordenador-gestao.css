@@ -78,63 +78,7 @@
     font-weight: bold;
     box-shadow: 0 4px 10px rgba(255, 140, 0, 0.3); /* Sombra para destaque */
     transform: translateY(-1px); /* Mantém um pouco de elevação *//* Importa os estilos base do dashboard do aluno */
-@import url("../Aluno/dashboard.css");
 
-/* Garante que o container principal não crie uma barra de rolagem horizontal */
-.background-container {
-    overflow-x: hidden; 
-}
-
-/* Estilos para o cabeçalho (navbar) */
-.navbar {
-    background-color: #ffffffcc; 
-    padding: 15px 20px; /* Adiciona um pouco de espaço interno */
-    display: flex;
-    justify-content: flex-start; /* Espaça a logo e os links */
-    align-items: center;
-    border-radius: 8px 8px 0 0; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); 
-    position: relative; 
-    z-index: 1; 
-}
-
-/* Estilos para o logo dentro da navbar */
-.logo img {
-    height: 40px; /* Ajuste a altura do logo conforme necessário */
-}
-
-/* Estilos para a lista de links de navegação */
-.nav-links ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-}
-
-.nav-links li {
-    margin-left: 20px;
-}
-
-.nav-links li:first-child {
-    margin-left: 0;
-}
-
-.nav-links .nav-item {
-    text-decoration: none;
-    color: #000;
-    font-weight: bold;
-    font-size: 1em;
-    padding: 10px 15px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-}
-
-.nav-links .nav-item:hover,
-.nav-links .nav-item.active {
-    /*background-color: #ffbb33;*/
-    color: #000;
-}
 
 /* Estilos para a área de conteúdo principal */
 .content-area {
@@ -622,38 +566,6 @@ input[type="submit"]:hover {
     cursor: not-allowed;
     transform: none;
 }
-
-/* Footer (Já deve estar em coordenador-dashboard.css ou outro global) */
-.footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-}
-
-.footer .contact-info p {
-    margin-bottom: 10px;
-    font-size: 0.9em;
-}
-
-.footer .social-media p {
-    margin-bottom: 10px;
-    font-size: 0.9em;
-}
-
-.footer .social-media a {
-    color: white;
-    font-size: 1.2em;
-    margin: 0 10px;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer .social-media a:hover {
-    color: #ff8c00; /* Laranja da sua paleta */
-}
-
 
 /* Responsividade Geral */
 @media (max-width: 992px) {

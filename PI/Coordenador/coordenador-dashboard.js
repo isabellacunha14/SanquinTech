@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const funcionarioNameSpan = document.querySelector('.welcome-section h2 span');
     if (funcionarioNameSpan) {
         funcionarioNameSpan.textContent = 'Maria Silva'; // Pode ser alterado para o nome real vindo do backend
-<<<<<<< HEAD
     }
 
     // Futuramente, você pode adicionar aqui a lógica para o formulário de busca
@@ -52,20 +51,4 @@ document.getElementById('changePasswordBtn')?.addEventListener('click', () => {
   alert('Abrir modal de alteração de senha (futuramente implementado).');
 });
 
-
-=======
-    }
-
-    // Futuramente, você pode adicionar aqui a lógica para o formulário de busca
-    const consultaForm = document.querySelector('.consulta-form');
-    if (consultaForm) {
-        consultaForm.addEventListener('submit', (event) => {
-            event.preventDefault(); // Impede o recarregamento da página
-            const searchTerm = document.getElementById('searchInput').value;
-            console.log(`Buscando por: ${searchTerm}`);
-            // Aqui entraria a lógica de busca (ex: uma chamada fetch para a sua API)
-            alert(`Iniciando busca por: "${searchTerm}"`);
-        });
-    }
->>>>>>> 7d609bce17515edea3ba31950ad0cd14fa1c1483
 });
