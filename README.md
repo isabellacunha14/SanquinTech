@@ -99,7 +99,7 @@ A gestão das tarefas do projeto está sendo realizada no Trello:
 
 ## 📄 Documento Técnico
 
-Para detalhes completos dos requisitos, diagramas, protótipos e funcionalidades, consulte o [Documento de Especificação de Requisitos de Software (ERS)](documentacao/ESI%20-%20Documento%20de%20Especificação%20de%20Requisitos%20de%20Software.pdf)
+Para detalhes completos dos requisitos, diagramas, protótipos e funcionalidades, consulte o [ESI - Documento de Especificação de Requisitos de Software](https://github.com/isabellacunha14/SanquinTech/blob/main/Documenta%C3%A7%C3%A3o/ESI%20-%20Documento%20de%20Especifica%C3%A7%C3%A3o%20de%20Requisitos%20de%20Software.pdf)
 
 ---
 
@@ -115,12 +115,12 @@ As instruções de instalação e execução local do sistema serão disponibili
 
 ## 👥 Equipe de Desenvolvimento
 
-Grupo SanquimTech – Disciplina de Engenharia de Software I  
+Grupo SanquimTech – Disciplinas de Algoritmos e Lógica de Programação; Engenharia de Software I; Programação Web
 Curso: Análise e Desenvolvimento de Sistemas
 
-- **Iago Faria dos Santos** – Design e modelagem de casos de uso  
-- **Isabella Gonçalves da Cunha** – Documentação e prototipação  
-- **João Victor Carnevalli da Silva** – Modelagem de banco de dados e requisitos
+- **Iago Faria dos Santos**  
+- **Isabella Gonçalves da Cunha**  
+- **João Victor Carnevalli da Silva**
 
 ---
 
