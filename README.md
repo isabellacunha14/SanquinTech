@@ -112,11 +112,21 @@ As instruções de instalação e execução local do sistema serão disponibili
 - Criação do banco de dados e importação do esquema
 
 ---
+## 🏫 Sobre o Projeto
+
+Este projeto é resultado de uma atividade interdisciplinar desenvolvida no curso de **Análise e Desenvolvimento de Sistemas** da **FATEC Mogi Mirim “Arthur Azevedo”**.  
+
+O sistema SanquimTech foi concebido e implementado pelos alunos como parte da integração prática dos conteúdos abordados nas seguintes disciplinas:
+
+- **Algoritmos e Lógica de Programação**  
+- **Engenharia de Software I**  
+- **Programação Web**  
+
+O objetivo é aplicar os conhecimentos adquiridos de forma colaborativa e contextualizada, por meio do desenvolvimento de uma aplicação web real voltada para a gestão acadêmica.
 
 ## 👥 Equipe de Desenvolvimento
 
-Grupo SanquimTech – Disciplinas de Algoritmos e Lógica de Programação; Engenharia de Software I; Programação Web
-Curso: Análise e Desenvolvimento de Sistemas
+Grupo SanquimTech 
 
 - **Iago Faria dos Santos**  
 - **Isabella Gonçalves da Cunha**  
